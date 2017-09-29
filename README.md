@@ -1,4 +1,4 @@
-[![AllContributors](https://img.shields.io/badge/all_contributors-3-blue.svg?style=flat-square)](#contributors)
+[![AllContributors](https://img.shields.io/badge/all_contributors-4-blue.svg?style=flat-square)](#contributors)
 
 # Proyecto de Sistemas y Tecnologías WEB
 
@@ -9,4 +9,4 @@ curso 2017/2018
 * [Omar Mendo Mesa](https://ozzrocker95.github.io/)
 * [Carlos Andrés Castro García](https://alu0100819847.github.io/)
 * [Darwin González Suárez]()
-* [Berkan Reyes Hernández]
+* [Berkan Reyes Hernández](https://berkanrhdz.github.io)
