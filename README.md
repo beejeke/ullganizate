@@ -6,13 +6,15 @@ Repositorio para alojar el proyecto de la asignatura Sistemas y Tecnologías Web
 curso 2017/2018
 # Tecnologías en Uso.
 
-Vamos a utilizar el framework de javascript [vuejs](https://vuejs.org/).
+Vamos a utilizar el framework de javascript [vuejs](https://vuejs.org/). ![vuejs](https://i.imgur.com/TvWW7Y1.png)
 
 
   Para ello, usaremos su modulo de npm:
-    npm install vue
+  ~~~  
+    npm install vue   
+  ~~~
 
-![vuejs](https://i.imgur.com/987LIpg.png)
+
 
 
 ### Autores
