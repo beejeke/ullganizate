@@ -18,7 +18,7 @@ Vamos a utilizar gestor de librerías de javascript [npm](https://www.npmjs.com/
 
   ~~~  
     sudo apt-get install npm   
-    ~~~
+  ~~~
 
 ### Autores
 * [Omar Mendo Mesa](https://ozzrocker95.github.io/)
