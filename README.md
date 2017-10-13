@@ -14,8 +14,11 @@ Vamos a utilizar el framework de javascript [vuejs](https://vuejs.org/). ![vuejs
     npm install vue   
   ~~~
 
+Vamos a utilizar gestor de librerías de javascript [npm](https://www.npmjs.com/). ![npm](https://i.imgur.com/mCrleZR.png)
 
-
+  ~~~  
+    sudo apt-get install npm   
+    ~~~
 
 ### Autores
 * [Omar Mendo Mesa](https://ozzrocker95.github.io/)
