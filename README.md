@@ -12,7 +12,7 @@ Vamos a utilizar el framework de javascript [vuejs](https://vuejs.org/).
   Para ello, usaremos su modulo de npm:
     npm install vue
 
-    ![vuejs](https://i.imgur.com/987LIpg.png)
+![vuejs](https://i.imgur.com/987LIpg.png)
 
 
 ### Autores
