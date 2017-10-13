@@ -7,7 +7,7 @@ curso 2017/2018
 # Tecnologías en Uso.
 
 Vamos a utilizar el framework de javascript [vuejs](https://vuejs.org/).
-![vuejs](https://vuejs.org/images/logo.png)
+![vuejs](https://i.imgur.com/987LIpg.png)
 Para ello, usaremos su modulo de npm:
   npm install vue
 
