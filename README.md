@@ -4,6 +4,13 @@
 
 Repositorio para alojar el proyecto de la asignatura Sistemas y Tecnologías Web, en la Universidad de La Laguna,
 curso 2017/2018
+# Tecnologías en Uso.
+
+Vamos a utilizar el framework de javascript [vuejs](https://vuejs.org/).
+![vuejs](https://vuejs.org/images/logo.png)
+Para ello, usaremos su modulo de npm:
+  npm install vue
+
 
 ### Autores
 * [Omar Mendo Mesa](https://ozzrocker95.github.io/)
