@@ -33,7 +33,7 @@ h3 {
 }
 .no-margin-top h3 { margin-top: 0; }
 
-img { max-width: 100%; }
+
 
 ::-moz-selection { background: #4aaf51; color: #fff; text-shadow: none; }
 ::selection { background: #4aaf51; color: #fff; text-shadow: none; }
