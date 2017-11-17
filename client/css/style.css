@@ -9,6 +9,10 @@ body {
     text-align: center;
 }
 
+footer {
+	background-color: #555;
+}
+
 strong { font-weight: 500; }
 
 a, a:hover, a:focus {
