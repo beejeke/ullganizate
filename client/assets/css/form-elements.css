@@ -48,13 +48,13 @@ textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeh
 
 
 button.btn {
+	font-family: 
 	height: 50px;
     margin: 0;
     padding: 0 20px;
     vertical-align: middle;
     background: #de615e;
     border: 0;
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 300;
     line-height: 50px;
