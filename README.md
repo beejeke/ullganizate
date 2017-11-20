@@ -22,6 +22,10 @@ Vamos a utilizar el framework de javascript [vuejs](https://vuejs.org/). ![vuejs
     sudo apt-get install npm   
   ~~~
 
+# [Tutorial vuejs](https://ozzrocker95.github.io/proyecto-sytw-1718/)
+
+
+
 # Sincronizar un fork
 
 1. Añadir rama remota del repositorio original.
