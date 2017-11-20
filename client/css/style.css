@@ -52,75 +52,8 @@ img {
   text-shadow: none;
 }
 
-.btn-link-1 {
-  display: inline-block;
-  height: 50px;
-  margin: 5px;
-  padding: 16px 20px 0 20px;
-  background: #de615e;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 16px;
-  color: #fff;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-}
-
-.btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active {
-  outline: 0;
-  opacity: 0.6;
-  color: #fff;
-}
-
-.btn-link-1.btn-link-1-facebook {
-  background: #4862a3;
-}
-
-.btn-link-1.btn-link-1-twitter {
-  background: #55acee;
-}
-
-.btn-link-1.btn-link-1-google-plus {
-  background: #dd4b39;
-}
-
-.btn-link-1 i {
-  padding-right: 5px;
-  vertical-align: middle;
-  font-size: 20px;
-  line-height: 20px;
-}
-
-.btn-link-2 {
-  display: inline-block;
-  height: 50px;
-  margin: 5px;
-  padding: 15px 20px 0 20px;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid #fff;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 16px;
-  color: #fff;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-}
-
-.btn-link-2:hover, .btn-link-2:focus, .btn-link-2:active, .btn-link-2:active:focus {
-  outline: 0;
-  opacity: 0.6;
-  background: rgba(0, 0, 0, 0.3);
-  color: #fff;
-}
-
 
 /***** Top content *****/
-
-.inner-bg {
-  padding: 100px 0 170px 0;
-}
 
 .top-content .text {
   color: #fff;
@@ -154,7 +87,7 @@ img {
   overflow: hidden;
   padding: 0 25px 15px 25px;
   background: #444;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 1);
   -moz-border-radius: 4px 4px 0 0;
   -webkit-border-radius: 4px 4px 0 0;
   border-radius: 4px 4px 0 0;
@@ -189,9 +122,12 @@ img {
 }
 
 .form-bottom {
-  padding: 25px 25px 30px 25px;
-  background: #444;
-  background: rgba(0, 0, 0, 0.3);
+	border-width: 2px;
+  border-style: solid;
+  border-color: black;
+	background-color: rgba(0,0,0,1);
+	border-radius: 2px;
+  padding: 25px 25px 15px 25px;
   -moz-border-radius: 0 0 4px 4px;
   -webkit-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
@@ -220,6 +156,185 @@ img {
 
 .social-login-buttons {
   margin-top: 25px;
+	margin-left: 8px;
+}
+
+@font-face {
+  font-family: fuente_titulo;
+  src: url(../fonts/rabiohead.ttf);
+}
+
+#container-title {
+  height: 150px;
+  width: 100%;
+  position:relative;
+  padding-top: 30px;
+  color: white;
+  border-bottom: 2px solid rgb(128,115,107);
+}
+
+#container-title::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  color: red;
+}
+
+
+#ull-title {
+  font-family: fuente_titulo;
+  font-size: 48pt;
+}
+
+#ganization-title {
+  font-family: fuente_titulo;
+  font-size: 48pt;
+}
+
+#ullganizate-logo {
+  width: 65px;
+  height: 65px;
+  margin-right: 10px;
+}
+
+#container-ullganization {
+	border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  text-align: justify;
+  /*background-image: url(../img/timeline.png);*/
+}
+
+#explicacion-ullganization {
+  background-size: 400px 400px;
+  color: black;
+}
+
+.ullganization-text {
+  font-family: fuente_titulo;
+  font-size: 24pt;
+  text-align: center;
+}
+
+.ullganization-text2 {
+  font-family: fuente_titulo;
+  font-size: 18pt;
+}
+
+#checkbox-landingpage1, #checkbox-landingpage2, #checkbox-landingpage3 {
+  font-family: fuente_titulo;
+  font-size: 24pt;
+}
+
+.checkbox-logo {
+  width: 45px;
+  height: 45px;
+}
+
+.izquierda-checkbox, .derecha-checkbox {
+	display: inline-block;
+}
+
+.derecha-checkbox {
+	float: right;
+	margin-right: 60px;
+	margin-bottom: 20px;
+}
+
+#timeline-img {
+	width: 330px;
+	height: 120px;	
+}
+
+.form-box {
+	background-color: 
+}
+
+#container-loginregister{
+height: 470px; 
+}
+.btn-facebook {
+  background: #3B5998;
+  border-radius: 0;
+  color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+
+.btn-facebook:link, .btn-facebook:visited {
+  color: #fff;
+}
+
+.btn-facebook:active, .btn-facebook:hover {
+  background: #263961;
+  color: #fff;
+}
+
+.btn-github {
+  background: black;
+  border-radius: 0;
+  color: #fff;
+  border-width: 1.7px;
+  border-style: solid;
+  border-color: black;
+}
+
+.btn-github:link, .btn-github:visited {
+  color: #fff;
+}
+
+.btn-github:active, .btn-github:hover {
+  background: #1f1f1f;
+  color: #fff;
+}
+
+.btn-google {
+  background: #d34836;
+  border-radius: 0;
+  color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+
+.btn-google:link, .btn-google:visited {
+  color: #fff;
+}
+
+.btn-google:active, .btn-google:hover {
+  background: #dd4b39;
+  color: #fff;
+}
+
+footer {
+	position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  border-top: 2px solid rgb(128,115,107);
+  color: white;
+  text-align: center;
+}
+
+footer::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  color: red;
+}
+
+
+.list-inline {
+  margin-top: 20px;
 }
 
 
