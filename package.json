@@ -1,0 +1,25 @@
+{
+  "name": "proyecto-sytw-1718",
+  "version": "1.0.0",
+  "description": "[![AllContributors](https://img.shields.io/badge/all_contributors-4-blue.svg?style=flat-square)](#contributors)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alu0100819847/proyecto-sytw-1718.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alu0100819847/proyecto-sytw-1718/issues"
+  },
+  "homepage": "https://github.com/alu0100819847/proyecto-sytw-1718#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
