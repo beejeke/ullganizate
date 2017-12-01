@@ -23,7 +23,7 @@ Vamos a utilizar el framework de javascript [vuejs](https://vuejs.org/). ![vuejs
   ~~~
 
 # [Tutorial vuejs](https://ozzrocker95.github.io/proyecto-sytw-1718/)
-
+# [Editor Online Web](http://jsbin.com/?html,output)
 
 
 # Sincronizar un fork
@@ -40,3 +40,5 @@ Vamos a utilizar el framework de javascript [vuejs](https://vuejs.org/). ![vuejs
 * [Carlos Andrés Castro García](https://alu0100819847.github.io/)
 * [Darwin González Suárez]()
 * [Berkan Reyes Hernández](https://berkanrhdz.github.io)
+
+
