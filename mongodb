@@ -1,2 +1,3 @@
 #!/bin/bash
-sudo mongod --dbpath=/data --port 27017
+sudo mongod --dbpath=/data --port 27018
+
