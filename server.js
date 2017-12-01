@@ -32,7 +32,6 @@ app.use(session({
 }));
 
 var auth = function(req, res, next) {
-  console.log("auth");
   console.log(req.session.user);
   Usuarios.findOne({usuario: req.session.user}, function (err, result) {
     if (err) {
@@ -81,7 +80,7 @@ var eliminar = function (user) {
       if (result != null) {
         console.log(result.username)
         if (result.username == user) {
-          console.log("eliminado")
+          console.log("Se ha eliminado al usuario: "+ result.username)
           Usuarios.remove({usuario: user}, function (err, result) {
             if(err) console.log(err);
           });
@@ -113,17 +112,12 @@ app.post('/login', function(req, res){
       res.sendFile(path.join(__dirname+'/client/index.html'));
 
     } else {
-console.log("hey")
       Usuarios.findOne({usuario: req.body.form_username}, function (err, result) {
-
-    console.log("hey")
         if (err) {
           console.log(err);
           res.send("ERROR");
         } else {
-console.log("hey")
           if (result != null) {
-console.log(result)
             if (result.username = req.body.form_username && bcrypt.compareSync(req.body.form_password, result.contrasena)) {
               console.log("logged")
               req.session.user = req.body.form_username;
