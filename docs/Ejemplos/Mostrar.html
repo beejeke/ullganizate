@@ -1,0 +1,26 @@
+<html>
+  <head>
+  </head>
+  <body>
+
+    <h2>Texto oculto/visible:</h2>
+    <p>Justo debajo se encuentra un texto el cual se puede ocultar o mostrar desde el archivo js utilizando vuejs.</p>
+    <div id="app-3">
+      <span v-if="seen">Now you see me</span>
+    </div>
+    <br>
+    <p> Modificando la variable seen de app3 a true, permitimos que se muestre el texto, pero su la modificamos a false, se oculta<p/>
+
+  </body>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/marked@0.3.6"></script>
+  <script src="https://unpkg.com/lodash@4.16.0"></script>
+  <script>
+    var app3 = new Vue({
+      el: '#app-3',
+      data: {
+        seen: true
+      }
+    });
+  </script>
+</html>

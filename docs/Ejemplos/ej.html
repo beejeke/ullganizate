@@ -1,0 +1,56 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="editor">
+      <p>Escribir "borrar" para eliminar el texto, escribir "mostrar" para volver a mostrarlo</p>
+
+      <textarea :value="input" @input="update"></textarea>
+      <div v-html="compiledMarkdown"></div>
+    </div>
+    <br>
+
+    <h2>Texto oculto/visible:</h2>
+    <p>Justo debajo se encuentra un texto el cual se puede ocultar o mostrar desde el archivo js utilizando vuejs.</p>
+    <div id="app-3">
+      <span v-if="seen">Now you see me</span>
+    </div>
+    <br>
+
+  </body>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/marked@0.3.6"></script>
+  <script src="https://unpkg.com/lodash@4.16.0"></script>
+  <script>
+    var app3 = new Vue({
+      el: '#app-3',
+      data: {
+        seen: true
+      }
+    });
+
+    new Vue({
+      el: '#editor',
+      data: {
+        input: ''
+      },
+      computed: {
+        compiledMarkdown: function () {
+
+          return marked(this.input, { sanitize: true })
+        }
+      },
+      methods: {
+        update: _.debounce(function (e) {
+          this.input = e.target.value
+          if(this.input.match(/borrar\s*/)){
+            app3.seen = false;
+          }
+          if(this.input.match(/mostrar\s*/)){
+            app3.seen = true;
+          }
+        }, 500)
+      }
+    });
+  </script>
+</html>

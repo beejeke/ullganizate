@@ -1,0 +1,34 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h2>Editor de texto utilizando vuejs:</h2>
+    <p>A continucación podemos encontrar un editor de texto, que saca por pantalla lo que escribimos.</p>
+
+    <div id="editor">
+      <textarea :value="input" @input="update"></textarea>
+      <div v-html="compiledMarkdown"></div>
+    </div>
+  </body>
+  <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/marked@0.3.6"></script>
+    <script src="https://unpkg.com/lodash@4.16.0"></script>
+  <script>
+    new Vue({
+      el: '#editor',
+      data: {
+        input: '# hello'
+      },
+      computed: {
+        compiledMarkdown: function () {
+          return marked(this.input, { sanitize: true })
+        }
+      },
+      methods: {
+        update: _.debounce(function (e) {
+          this.input = e.target.value
+        }, 500)
+      }
+    });
+  </script>
+</html>
