@@ -206,7 +206,16 @@
     &lt;br&gt;
   &lt;/body&gt;
   &lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;
-  &lt;script src=&quot;MostrarInfo.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var app2 = new Vue({
+      el: &apos;#app-2&apos;,
+      data: {
+      message: &apos;P&#xE1;gina cargada el &apos; + new Date().toLocaleString(),
+      message2: &apos;Un mensaje totalmente distinto&apos;
+      }
+    });
+
+  &lt;/script&gt;
 &lt;/html&gt;
 </code></pre><ul>
 <li><a href="Lista.html">Mostrar list de textos.</a></li>
@@ -402,7 +411,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Ejemplos","level":"1.4","depth":1,"previous":{"title":"Edición HTML","level":"1.3","depth":1,"path":"MostrarDatos/Datos.md","ref":"MostrarDatos/Datos.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Ejemplos/Ejemplo.md","mtime":"2017-12-02T16:05:43.476Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-02T16:06:11.148Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Ejemplos","level":"1.4","depth":1,"previous":{"title":"Edición HTML","level":"1.3","depth":1,"path":"MostrarDatos/Datos.md","ref":"MostrarDatos/Datos.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Ejemplos/Ejemplo.md","mtime":"2017-12-02T16:12:43.192Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-02T16:13:02.534Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -21,8 +21,18 @@
     <br>
   </body>
   <script src="https://unpkg.com/vue"></script>
-  <script src="MostrarInfo.js"></script>
+  <script>
+    var app2 = new Vue({
+      el: '#app-2',
+      data: {
+      message: 'Página cargada el ' + new Date().toLocaleString(),
+      message2: 'Un mensaje totalmente distinto'
+      }
+    });
+
+  </script>
 </html>
+
 ~~~
 * [Mostrar list de textos.](Lista.html)
 
