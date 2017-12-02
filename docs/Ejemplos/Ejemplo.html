@@ -187,12 +187,183 @@
                                 <h1 id="ejemplos-de-vuejs">Ejemplos de VueJS</h1>
 <ul>
 <li><a href="MostrarInfo.html">Mostrar informaci&#xF3;n al pasar el cursor por encima.</a></li>
+</ul>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2&gt;Ejemplo pasando el rat&#xF3;n:&lt;/h2&gt;
+    &lt;div id=&quot;app-2&quot;&gt;
+      &lt;span v-bind:title=&quot;message&quot;&gt;
+        Pasando el rat&#xF3;n por encima de este texto y esperando unos segundos,
+        aparecer&#xE1; cuando ha cargado la p&#xE1;gina.
+      &lt;/span&gt;
+      &lt;br&gt;
+      &lt;span v-bind:title=&quot;message2&quot;&gt;
+      Aqu&#xED; tenemos un mensaje distinto.
+      &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+  &lt;/body&gt;
+  &lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;MostrarInfo.js&quot;&gt;&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><ul>
 <li><a href="Lista.html">Mostrar list de textos.</a></li>
+</ul>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2&gt;Listado de elementos utilizando vuejs:&lt;/h2&gt;
+    &lt;div id=&quot;app-4&quot;&gt;
+      &lt;ol&gt;
+        &lt;li v-for=&quot;todo in todos&quot;&gt;
+          {{ todo.text }}
+        &lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+  var app4 = new Vue({
+    el: &apos;#app-4&apos;,
+    data: {
+      todos: [
+        { text: &apos;Aprender JavaScript&apos; },
+        { text: &apos;Aprender Vue&apos; },
+        { text: &apos;Construir algo incre&#xED;ble&apos; }
+      ]
+    }
+  });
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre><ul>
 <li><a href="Editor.html">Compilador Markdown</a></li>
+</ul>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2&gt;Editor de texto utilizando vuejs:&lt;/h2&gt;
+    &lt;p&gt;A continucaci&#xF3;n podemos encontrar un editor de texto, que saca por pantalla lo que escribimos.&lt;/p&gt;
+
+    &lt;div id=&quot;editor&quot;&gt;
+      &lt;textarea :value=&quot;input&quot; @input=&quot;update&quot;&gt;&lt;/textarea&gt;
+      &lt;div v-html=&quot;compiledMarkdown&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://unpkg.com/marked@0.3.6&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://unpkg.com/lodash@4.16.0&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    new Vue({
+      el: &apos;#editor&apos;,
+      data: {
+        input: &apos;# hello&apos;
+      },
+      computed: {
+        compiledMarkdown: function () {
+          return marked(this.input, { sanitize: true })
+        }
+      },
+      methods: {
+        update: _.debounce(function (e) {
+          this.input = e.target.value
+        }, 500)
+      }
+    });
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre><ul>
 <li><a href="Mostrar.html">Mostrar u ocultar elementos del html sin modificarlo</a></li>
+</ul>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+    &lt;h2&gt;Texto oculto/visible:&lt;/h2&gt;
+    &lt;p&gt;Justo debajo se encuentra un texto el cual se puede ocultar o mostrar desde el archivo js utilizando vuejs.&lt;/p&gt;
+    &lt;div id=&quot;app-3&quot;&gt;
+      &lt;span v-if=&quot;seen&quot;&gt;Now you see me&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+    &lt;p&gt; Modificando la variable seen de app3 a true, permitimos que se muestre el texto, pero su la modificamos a false, se oculta&lt;p/&gt;
+
+  &lt;/body&gt;
+  &lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://unpkg.com/marked@0.3.6&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://unpkg.com/lodash@4.16.0&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var app3 = new Vue({
+      el: &apos;#app-3&apos;,
+      data: {
+        seen: true
+      }
+    });
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre><ul>
 <li><a href="ej.html">Combinando mostrar informaci&#xF3;n con editor</a></li>
 </ul>
+<pre><code>&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;editor&quot;&gt;
+      &lt;p&gt;Escribir &quot;borrar&quot; para eliminar el texto, escribir &quot;mostrar&quot; para volver a mostrarlo&lt;/p&gt;
 
+      &lt;textarea :value=&quot;input&quot; @input=&quot;update&quot;&gt;&lt;/textarea&gt;
+      &lt;div v-html=&quot;compiledMarkdown&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+
+    &lt;h2&gt;Texto oculto/visible:&lt;/h2&gt;
+    &lt;p&gt;Justo debajo se encuentra un texto el cual se puede ocultar o mostrar desde el archivo js utilizando vuejs.&lt;/p&gt;
+    &lt;div id=&quot;app-3&quot;&gt;
+      &lt;span v-if=&quot;seen&quot;&gt;Now you see me&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+
+  &lt;/body&gt;
+  &lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://unpkg.com/marked@0.3.6&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://unpkg.com/lodash@4.16.0&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    var app3 = new Vue({
+      el: &apos;#app-3&apos;,
+      data: {
+        seen: true
+      }
+    });
+
+    new Vue({
+      el: &apos;#editor&apos;,
+      data: {
+        input: &apos;&apos;
+      },
+      computed: {
+        compiledMarkdown: function () {
+
+          return marked(this.input, { sanitize: true })
+        }
+      },
+      methods: {
+        update: _.debounce(function (e) {
+          this.input = e.target.value
+          if(this.input.match(/borrar\s*/)){
+            app3.seen = false;
+          }
+          if(this.input.match(/mostrar\s*/)){
+            app3.seen = true;
+          }
+        }, 500)
+      }
+    });
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
                                 
                                 </section>
                             
@@ -231,7 +402,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Ejemplos","level":"1.4","depth":1,"previous":{"title":"Edición HTML","level":"1.3","depth":1,"path":"MostrarDatos/Datos.md","ref":"MostrarDatos/Datos.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Ejemplos/Ejemplo.md","mtime":"2017-12-02T15:51:32.572Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-02T15:52:14.857Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Ejemplos","level":"1.4","depth":1,"previous":{"title":"Edición HTML","level":"1.3","depth":1,"path":"MostrarDatos/Datos.md","ref":"MostrarDatos/Datos.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Ejemplos/Ejemplo.md","mtime":"2017-12-02T16:05:43.476Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-02T16:06:11.148Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -239,10 +410,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
