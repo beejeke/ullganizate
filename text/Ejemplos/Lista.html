@@ -1,0 +1,27 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h2>Listado de elementos utilizando vuejs:</h2>
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+  </body>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+  var app4 = new Vue({
+    el: '#app-4',
+    data: {
+      todos: [
+        { text: 'Aprender JavaScript' },
+        { text: 'Aprender Vue' },
+        { text: 'Construir algo increíble' }
+      ]
+    }
+  });
+  </script>
+</html>

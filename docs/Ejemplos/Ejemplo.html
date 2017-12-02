@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Primeros Pasos · GitBook</title>
+        <title>Ejemplos · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../MostrarDatos/Datos.html" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="../MostrarDatos/Datos.html" />
     
 
     </head>
@@ -102,9 +100,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="first.html">
+        <li class="chapter " data-level="1.2" data-path="../primerosPasos/first.html">
             
-                <a href="first.html">
+                <a href="../primerosPasos/first.html">
             
                     
                     Primeros Pasos
@@ -128,9 +126,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../Ejemplos/Ejemplo.html">
+        <li class="chapter active" data-level="1.4" data-path="Ejemplo.html">
             
-                <a href="../Ejemplos/Ejemplo.html">
+                <a href="Ejemplo.html">
             
                     
                     Ejemplos
@@ -171,7 +169,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Primeros Pasos</a>
+        <a href=".." >Ejemplos</a>
     </h1>
 </div>
 
@@ -186,33 +184,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="primeros-pasos">Primeros Pasos</h1>
-<p>Para comenzar a usar vue, ser&#xE1; necesario el uso de sus propias librer&#xED;as, ya sea <a href="https://www.npmjs.com/package/vue" target="_blank">npm</a> o a&#xF1;adiendo el script mediante su URL :</p>
-<pre><code>  https://unpkg.com/vue
-</code></pre><p>Comenzamos mediante un peque&#xF1;o ejemplo de holamundo:
-El archivo javascript estar&#xE1; compuesto por una llamada a Vue que manejar&#xE1; el div deseado como si fuese una funci&#xF3;n de javascript (o un hash en otros lenguajes como ruby).
-A partir del siguiente html podremos modificar el contenido de su div mediante una funci&#xF3;n javascript:</p>
-<pre><code>&lt;body&gt;
-  &lt;div id=&quot;app&quot;&gt;
-    &lt;p&gt;{{ message }}&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;holamundo.js&quot;&gt;&lt;/script&gt;
-</code></pre><p><strong> Es importante incluir los scripts al acabar el body </strong><br>A continuaci&#xF3;n procedemos a analizar el documento js.<br>Con la expresi&#xF3;n:</p>
-<pre><code> &quot;el: &apos;#nombre_del_div&apos;&quot;
-</code></pre><p>seleccionaremos el id que le hemos asignado al div. A continuaci&#xF3;n podremos asignar un valor mediante su elemento:</p>
-<pre><code>&quot;data : {
-  nombreVariableHTML: &apos;mensaje&apos;
-}
-</code></pre><p>A continuaci&#xF3;n encontramos el script completo:</p>
-<pre><code>new Vue({
-  el: &apos;#app&apos;,
-  data: {
-    message: &apos;Hello Vue.js!&apos;
-  }
-})
-</code></pre><p>Como resultado de la combinaci&#xF3;n del archivo javaScript y del HTML obtenemos:<br><img src="hola.png" alt="hola"></p>
+                                <h1 id="ejemplos-de-vuejs">Ejemplos de VueJS</h1>
+<ul>
+<li><a href="MostrarInfo.html">Mostrar informaci&#xF3;n al pasar el cursor por encima.</a></li>
+<li><a href="Lista.html">Mostrar list de textos.</a></li>
+<li><a href="Editor.html">Compilador Markdown</a></li>
+<li><a href="Mostrar.html">Mostrar u ocultar elementos del html sin modificarlo</a></li>
+<li><a href="ej.html">Combinando mostrar informaci&#xF3;n con editor</a></li>
+</ul>
 
                                 
                                 </section>
@@ -240,14 +219,10 @@ A partir del siguiente html podremos modificar el contenido de su div mediante u
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="../MostrarDatos/Datos.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Edición HTML">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../MostrarDatos/Datos.html" class="navigation navigation-next " aria-label="Next page: Edición HTML">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -256,7 +231,7 @@ A partir del siguiente html podremos modificar el contenido de su div mediante u
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Primeros Pasos","level":"1.2","depth":1,"next":{"title":"Edición HTML","level":"1.3","depth":1,"path":"MostrarDatos/Datos.md","ref":"MostrarDatos/Datos.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"primerosPasos/first.md","mtime":"2017-12-01T14:10:36.885Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-02T15:52:14.857Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Ejemplos","level":"1.4","depth":1,"previous":{"title":"Edición HTML","level":"1.3","depth":1,"path":"MostrarDatos/Datos.md","ref":"MostrarDatos/Datos.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Ejemplos/Ejemplo.md","mtime":"2017-12-02T15:51:32.572Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-02T15:52:14.857Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
