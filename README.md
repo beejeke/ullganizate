@@ -21,6 +21,8 @@ Vamos a utilizar el framework de javascript [vuejs](https://vuejs.org/). ![vuejs
   ~~~  
     sudo apt-get install npm   
   ~~~
+# Despliegue IAAS.
+10.6.128.251:8087
 
 # [Tutorial vuejs](https://ozzrocker95.github.io/proyecto-sytw-1718/)
 # [Editor Online Web](http://jsbin.com/?html,output)
