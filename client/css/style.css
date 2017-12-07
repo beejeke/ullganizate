@@ -124,8 +124,9 @@ img {
 .form-bottom {
 	border-width: 2px;
   border-style: solid;
-  border-color: black;
-	background-color: rgba(0,0,0,1);
+  border-color: #583131;
+  border-top-color: black;
+	background-color: white;
 	border-radius: 2px;
   padding: 25px 25px 15px 25px;
   -moz-border-radius: 0 0 4px 4px;
@@ -164,13 +165,22 @@ img {
   src: url(../fonts/rabiohead.ttf);
 }
 
+#navbar-page {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+
 #container-title {
-  height: 150px;
+  height: 130px;
   width: 100%;
   position:relative;
+  background-image: url('../img/banner.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 130px;
   padding-top: 30px;
-  color: white;
-  border-bottom: 2px solid rgb(128,115,107);
+  color: black;
+  border-bottom: 2px solid black;
 }
 
 #container-title::before {
@@ -180,82 +190,12 @@ img {
   left:0;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.9);
   color: red;
 }
 
-
-#ull-title {
+#ull-title, #ganization-title {
   font-family: fuente_titulo;
   font-size: 48pt;
-}
-
-#ganization-title {
-  font-family: fuente_titulo;
-  font-size: 48pt;
-}
-
-#ullganizate-logo {
-  width: 65px;
-  height: 65px;
-  margin-right: 10px;
-}
-
-#container-ullganization {
-	border-width: 2px;
-  border-style: solid;
-  border-color: black;
-  text-align: justify;
-  /*background-image: url(../img/timeline.png);*/
-}
-
-#explicacion-ullganization {
-  background-size: 400px 400px;
-  color: black;
-}
-
-.ullganization-text {
-  font-family: fuente_titulo;
-  font-size: 24pt;
-  text-align: center;
-}
-
-.ullganization-text2 {
-  font-family: fuente_titulo;
-  font-size: 18pt;
-}
-
-#checkbox-landingpage1, #checkbox-landingpage2, #checkbox-landingpage3 {
-  font-family: fuente_titulo;
-  font-size: 24pt;
-}
-
-.checkbox-logo {
-  width: 45px;
-  height: 45px;
-}
-
-.izquierda-checkbox, .derecha-checkbox {
-	display: inline-block;
-}
-
-.derecha-checkbox {
-	float: right;
-	margin-right: 60px;
-	margin-bottom: 20px;
-}
-
-#timeline-img {
-	width: 330px;
-	height: 120px;	
-}
-
-.form-box {
-	background-color: 
-}
-
-#container-loginregister {
-  height: 470px; 
 }
 
 .panel-login {
@@ -274,23 +214,36 @@ a {
   color: white;
 }
 
-#register-form-link {
-  font-family: fuente_titulo;
-  font-size: 18pt;
+.login-register-title {
+  background-color: #583131;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  padding: 10px 10px 10px 20px;
 }
 
-#login-form-link {
+#register-form-link, #login-form-link {
   font-family: fuente_titulo;
   font-size: 18pt;
+  text-shadow: -1px -1px 1px #583131, 1px 1px 1px #583131, -1px 1px 1px #000, 1px -1px 1px #583131;
+
 }
 
 .btn-facebook {
+  font-family: fuente_titulo;
   background: #3B5998;
   border-radius: 0;
   color: #fff;
   border-width: 1px;
   border-style: solid;
   border-color: black;
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  margin-left: 2px;
 }
 
 .btn-facebook:link, .btn-facebook:visited {
@@ -303,12 +256,20 @@ a {
 }
 
 .btn-github {
+  font-family: fuente_titulo;
   background: black;
   border-radius: 0;
   color: #fff;
-  border-width: 1.7px;
+  border-width: 1px;
   border-style: solid;
   border-color: black;
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  margin-left: 2px;
 }
 
 .btn-github:link, .btn-github:visited {
@@ -321,12 +282,20 @@ a {
 }
 
 .btn-google {
+  font-family: fuente_titulo;
   background: #d34836;
   border-radius: 0;
   color: #fff;
   border-width: 1px;
   border-style: solid;
   border-color: black;
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  margin-left: 2px;
 }
 
 .btn-google:link, .btn-google:visited {
@@ -338,27 +307,22 @@ a {
   color: #fff;
 }
 
-footer {
-	position: absolute;
+#relleno-footer {
+  background-color: #FC6E5E;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  height: 50px;
   width: 100%;
-  left: 0;
-  bottom: 0;
+}
+
+footer {
   border-top: 2px solid rgb(128,115,107);
-  color: white;
-  text-align: center;
+  color: black;
+  background-color: #B0DEDB;
+  font-family: fuente_titulo;
+  font-size: 24px;
 }
-
-footer::before {
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.9);
-  color: red;
-}
-
 
 .list-inline {
   margin-top: 20px;
