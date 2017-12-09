@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title></title>
+
+ <!-- CSS -->
+ <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+ <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+ <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+ <link rel="stylesheet" href="assets/css/form-elements.css">
+ <link rel="stylesheet" href="css/style.css">
+ <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+ <!-- Favicon and touch icons -->
+ <link rel="shortcut icon" href="assets/ico/favicon.png">
+</head>
+
+<body>
+
+ <div class="container" id="container-title">
+   <div class="page-header">
+     <div class="row">
+       <div class="col-md-12 text">
+       </div>
+     </div>
+   </div>
+ </div>
+
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded" id="navbar-page">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+    <a class="navbar-brand" href="#">Ullganization</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link">Perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Help</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link">@berkanrhdz</a>
+        </li>
+        <li class="navbar-item">
+          <a class="nav-link">LogOut</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+ 
+  <div class="container" id="">
+    <div class="row">
+      <div class="offset-md-2 col-md-8 offset-md-2">
+        <label for="crear_evento">TIMELINE DE EVENTOS DEL USUARIO</label>
+        <a data-toggle="modal" href="#CrearEvento" class="btn btn-success" id="crear-evento-boton" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus" aria-hidden="true"></i> Crear Evento</a>    
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="CrearEvento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h2 class="modal-title">Nuevo Evento</h2></br>
+        </div>
+
+        <div class="modal-body">
+          <form role="form" method="post" action="agregar_empresa.php" enctype="multipart/form-data">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="container" id="">
+    <div class="row">
+      <div class="col-md-12" id="global">
+        <section id="cd-timeline" class="cd-container" id="mensaje">
+          <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-picture">
+              <strong>
+      					12
+      					</br>
+      					oct
+    				  </strong>
+            </div>
+            <!-- cd-timeline-img -->
+
+            <div class="cd-timeline-content cd-left">
+              <h2>Title of section 1</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+              <a href="#0" class="cd-read-more">Read more</a>
+            </div>
+            <!-- cd-timeline-content -->
+
+            <div class="cd-timeline-content cd-right">
+              <h2>Title of section 2</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+              <a href="#0" class="cd-read-more">Read more</a>
+            </div>
+            <!-- cd-timeline-content -->
+          </div>
+          <!-- cd-timeline-block -->
+          <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-picture">
+              <strong>
+      					12
+      					</br>
+      					oct
+      				</strong>
+            </div>
+            <!-- cd-timeline-img -->
+
+            <div class="cd-timeline-content cd-left">
+              <h2>Title of section 3</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+              <a href="#0" class="cd-read-more">Read more</a>
+            </div>
+            <!-- cd-timeline-content -->
+
+            <div class="cd-timeline-content cd-right">
+              <h2>Title of section 4</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+              <a href="#0" class="cd-read-more">Read more</a>
+            </div>
+            <!-- cd-timeline-content -->
+          </div>
+          <!-- cd-timeline-block -->
+        </section>
+        <!-- cd-timeline -->
+      </div>
+    </div>
+  </div>
+ 
+ <!-- Javascript -->
+ <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.1/js/tether.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>      <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+
+</body>
+
+</html>
