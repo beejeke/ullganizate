@@ -1,46 +1,38 @@
-module.exports = function(router, passport, path) {
+module.exports = function(router, passport, path, dir) {
 let bd = require('./actions.js');
 var passportGithub = require('./passport/auth/github.js');
 var passportTwitter = require('./passport/auth/twitter.js');
 var passportFacebook = require('./passport/auth/facebook.js');
   router.get('/',function(req,res){
-       res.sendFile(__dirname + '../index.html');
+       res.sendFile(path.join(dir, 'index.html'));
 
   });
 
   router.post('/login', function(req, res){
     console.log("logging")
+    console.log(req.body.form_username)
       if (!req.body.form_username || !req.body.form_password) { //campos invalidos o nulos
 
         console.log('Rellene los campos');
-        res.sendFile(__dirname + '../index.html');
+        res.sendFile(path.join(dir, 'index.html'));
 
       } else {
+        bd.isInUser(req.body.form_username, req.body.form_password, req)
+        if(req.session.admin = true)
+        {
 
-        if(bd.isInUser(req.body.form_username, req.body.form_password)) {
+          console.log('Logged as: '+ req.body.form_username)
 
-          req.session.user = req.body.form_username;
-          req.session.admin = true;
+          res.sendFile(path.join(dir, 'index.html'));
+        } else {
 
-          console.log('Logged as: '+ req.session.user)
-
-          res.sendFile(__dirname + '../index.html');
-
+          res.sendFile(path.join(dir, 'index.html'));
         }
-
-        else {
-
-          console.log('Credenciales de '+ req.body.form_username+ ' incorrectas.');
-
-          res.sendFile(__dirname + '../index.html');
-
-        }
-
       }
   });
 
   router.get('/login', function(req, res){
-       res.sendFile(__dirname + '../index.html');
+       res.sendFile(path.join(dir, 'index.html'));
   });
 
   router.post('/register', function(req, res){
@@ -50,18 +42,18 @@ var passportFacebook = require('./passport/auth/facebook.js');
     if(!req.body.form_username || !req.body.form_password)
     {
         console.log('registrar failed');
-        res.sendFile(__dirname + '../index.html');
+        res.sendFile(path.join(dir, 'index.html'));
     }
     else{
 
         bd.insert(req.body.form_username, req.body.form_password);
-        res.sendFile(__dirname + '../index.html');
+        res.sendFile(path.join(dir, 'index.html'));
       }
   });
 
   router.get('/register', function(req, res){
     console.log("entrando en registro")
-       res.sendFile(__dirname + '../index.html');
+       res.sendFile(path.join(dir, 'index.html'));
   });
 
 

@@ -8,8 +8,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter');
-//var configAuth = require('./auth');
-
+var dir = path.join(__dirname, 'client');
 
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(session({ secret: 'aguacate', resave: true, saveUninitialized: true}));
@@ -26,10 +25,10 @@ mongoose.connect('mongodb://localhost:27018/Usuarios', function(error){
 });
 
 
-require('./server/routes.js')(routes, passport, path);
+require('./server/routes.js')(routes, passport, path, dir);
 app.use('/', routes);
 
-app.use('/', express.static('client'));
+app.use('/', express.static(path.join(__dirname, 'client')));
   var server = app.listen(process.env.PORT || 8087, ()=> {
 	var host = server.address().address
 	var port = server.address().port

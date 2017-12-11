@@ -59,28 +59,22 @@ bd.delete = function(user) {
   })
 };
 
-bd.isInUser = function(user, pass) {
+bd.isInUser = function(user, pass, req) {
   Usuarios.findOne({'local.name': user}, function (err, result) {
-
     if (err) {
       console.log(err);
     } else {
       if (result != null) {
         if (result.username = user && bcrypt.compareSync(pass, result.local.password)) {
-
           console.log("Usuario Correcto.");
-          //console.log("Logged as " +result.usuario)
-          return true;
-          /* req.session.user = req.body.form_username;
+
+          req.session.user = req.body.form_username;
           req.session.admin = true;
-          res.sendFile('/client/index.html');*/
-
+          console.log("correcto");
         }
-
       } else {
-
+          req.session.admin = false;
         console.log('Usuario inexistente.');
-        return false;
 
         //res.sendFile('/client/index.html');
       }
