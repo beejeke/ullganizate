@@ -15,8 +15,7 @@
  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
- <!-- Favicon and touch icons -->
- <link rel="shortcut icon" href="assets/ico/favicon.png">
+
 </head>
 
 <body>
@@ -76,17 +75,18 @@
             <!-- cd-timeline-img -->
             <div class="cd-timeline-img cd-picture">
               <strong>
-      					10
+      					<text name="fecha_fin_evento_dia[]">10</text>
       					</br>
-      					sep
+                <text name="fecha_fin_evento_mes[]">sep</text>
     				  </strong>
             </div>
             <!-- cd-timeline-img -->
             
             <!-- cd-timeline-content -->
             <div class="cd-timeline-content cd-left" >
-              <h2 name="titulos_eventos[]">T</h2>
-              <p name="descripcion_eventos[]">a</p>
+              <h2 name="titulos_eventos[]"></h2>
+              <span name="fechas_creacion_eventos[]"></span>
+              <p name="descripcion_eventos[]"></p>
               <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#EditEvento">
                 <i class="fa fa-wrench" aria-hidden="true"> </i>
               </button>
@@ -97,8 +97,9 @@
             <!-- cd-timeline-content -->
             
             <!-- cd-timeline-content -->
-            <div class="cd-timeline-content cd-right" name="titulos_eventos[]">
-              <h2 name="titulos_eventos[]">T</h2>
+            <div class="cd-timeline-content cd-right">
+              <h2 name="titulos_eventos[]"></h2>
+              <span name="fechas_creacion_eventos[]"></span>
               <p name="descripcion_eventos[]"></p>
               <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#EditEvento">
                 <i class="fa fa-wrench" aria-hidden="true"> </i>
@@ -147,7 +148,7 @@
                 </div>
               </div>
               <br>
-              <button type="submit" class="btn btn-primary float-md-right">
+              <button type="button" class="btn btn-primary float-md-right" onclick="añadir_evento();">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir Evento
               </button>
               <button type="button" class="btn btn-danger float-md-right" data-dismiss="modal">
@@ -203,13 +204,14 @@
       </div>
  
  <!-- Javascript -->
- <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.1/js/tether.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>      <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script> 
+ <script src="js/ullganizate.js"></script>
+
 
 </body>
 
