@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/alu0100819847/proyecto-sytw-1718#readme",
   "dependencies": {
+    "alert-node": "^0.2.1",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",

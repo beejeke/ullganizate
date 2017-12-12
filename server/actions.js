@@ -5,24 +5,21 @@ var Usuarios = mongoose.model('Usuarios', Schema);
 
 
 var bd = [];
-
-bd.insert = function(user, pass) {
+bd.insert = function(user, pass, email, rol) {
 
   Usuarios.findOne({'local.name': user}, function (err, result) {
-
     if (err) {
       console.log(err);
     } else {
       if (result != null) {
-        if (result.username = user && bcrypt.compareSync(pass, result.local.password)) {
           console.log("El usuario "+ user + " ya existente.");
-          return false;
         }
-      } else {
+       else {
           console.log("Inserting user: "+user);
-          console.log("With pass "+pass);
-
-          usuario1 = new Usuarios({'local.name': user, 'local.password': bcrypt.hashSync(pass)}, function (err, result) {
+          console.log("With pass: "+pass);
+          console.log("Email: "+ email);
+          console.log("Rol: "+ rol)
+          usuario1 = new Usuarios({'local.name': user, 'local.password': bcrypt.hashSync(pass), 'local.email': email, 'local.rol': rol}, function (err, result) {
             if (err) return handleError(err);
           })
 
@@ -34,6 +31,7 @@ bd.insert = function(user, pass) {
     })
 };
 
+//esto esta mal
 bd.delete = function(user) {
 
   console.log(user);
@@ -65,7 +63,7 @@ bd.isInUser = function(user, pass, req) {
       console.log(err);
     } else {
       if (result != null) {
-        if (result.username = user && bcrypt.compareSync(pass, result.local.password)) {
+        if (result.local.username = user && bcrypt.compareSync(pass, result.local.password)) {
           console.log("Usuario Correcto.");
 
           req.session.user = req.body.form_username;
@@ -81,5 +79,4 @@ bd.isInUser = function(user, pass, req) {
     }
   })
 };
-
 module.exports = bd;
