@@ -39,14 +39,16 @@ var passportFacebook = require('./passport/auth/facebook.js');
 
         console.log(req.body.form_username)
         console.log(req.body.form_password)
-    if(!req.body.form_username || !req.body.form_password)
+        console.log(req.body.form_email)
+        console.log(req.body.form_rol)
+    if(!req.body.form_username || !req.body.form_password || req.body.form_email || req.body.form_rol)
     {
         console.log('registrar failed');
         res.sendFile(path.join(dir, 'index.html'));
     }
     else{
 
-        bd.insert(req.body.form_username, req.body.form_password);
+        bd.insert(req.body.form_username, req.body.form_password, req.body.form_email, req.body.form_rol);
         res.sendFile(path.join(dir, 'index.html'));
       }
   });
