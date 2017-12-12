@@ -14,6 +14,7 @@
  <link rel="stylesheet" href="assets/css/form-elements.css">
  <link rel="stylesheet" href="css/style.css">
  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
  <!-- Favicon and touch icons -->
  <link rel="shortcut icon" href="assets/ico/favicon.png">
@@ -38,10 +39,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link">Perfil</a>
+          <a class="nav-link" href="#">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Help</a>
+          <a class="nav-link" href="#">Help</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -49,7 +50,7 @@
           <a class="nav-link">@berkanrhdz</a>
         </li>
         <li class="navbar-item">
-          <a class="nav-link">LogOut</a>
+          <a class="nav-link" href="#">LogOut</a>
         </li>
       </ul>
     </div>
@@ -57,25 +58,10 @@
  
   <div class="container" id="">
     <div class="row">
-      <div class="offset-md-2 col-md-8 offset-md-2">
+      <div class="col-md-12" id="titulo_timeline">
         <label for="crear_evento">TIMELINE DE EVENTOS DEL USUARIO</label>
+        <br>
         <a data-toggle="modal" href="#CrearEvento" class="btn btn-success" id="crear-evento-boton" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus" aria-hidden="true"></i> Crear Evento</a>    
-      </div>
-    </div>
-  </div>
-  
-  <div class="modal fade" id="CrearEvento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h2 class="modal-title">Nuevo Evento</h2></br>
-        </div>
-
-        <div class="modal-body">
-          <form role="form" method="post" action="agregar_empresa.php" enctype="multipart/form-data">
-          </form>
-        </div>
       </div>
     </div>
   </div>
@@ -85,61 +71,137 @@
     <div class="row">
       <div class="col-md-12" id="global">
         <section id="cd-timeline" class="cd-container" id="mensaje">
+
+          <!-- cd-timeline-block -->
           <div class="cd-timeline-block">
+            <!-- cd-timeline-img -->
             <div class="cd-timeline-img cd-picture">
               <strong>
-      					12
+      					10
       					</br>
-      					oct
+      					sep
     				  </strong>
             </div>
             <!-- cd-timeline-img -->
-
-            <div class="cd-timeline-content cd-left">
-              <h2>Title of section 1</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-              <a href="#0" class="cd-read-more">Read more</a>
+            
+            <!-- cd-timeline-content -->
+            <div class="cd-timeline-content cd-left" >
+              <h2 name="titulos_eventos[]">T</h2>
+              <p name="descripcion_eventos[]">a</p>
+              <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#EditEvento">
+                <i class="fa fa-wrench" aria-hidden="true"> </i>
+              </button>
+              <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#EliminarEvento cursor: pointer;">
+    						<i class="fa fa-trash" aria-hidden="true"></i>
+    					</buton>
             </div>
             <!-- cd-timeline-content -->
-
-            <div class="cd-timeline-content cd-right">
-              <h2>Title of section 2</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
-              <a href="#0" class="cd-read-more">Read more</a>
-            </div>
+            
             <!-- cd-timeline-content -->
-          </div>
-          <!-- cd-timeline-block -->
-          <div class="cd-timeline-block">
-            <div class="cd-timeline-img cd-picture">
-              <strong>
-      					12
-      					</br>
-      					oct
-      				</strong>
-            </div>
-            <!-- cd-timeline-img -->
-
-            <div class="cd-timeline-content cd-left">
-              <h2>Title of section 3</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-              <a href="#0" class="cd-read-more">Read more</a>
-            </div>
-            <!-- cd-timeline-content -->
-
-            <div class="cd-timeline-content cd-right">
-              <h2>Title of section 4</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
-              <a href="#0" class="cd-read-more">Read more</a>
+            <div class="cd-timeline-content cd-right" name="titulos_eventos[]">
+              <h2 name="titulos_eventos[]">T</h2>
+              <p name="descripcion_eventos[]"></p>
+              <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#EditEvento">
+                <i class="fa fa-wrench" aria-hidden="true"> </i>
+              </button>
+              <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#EliminarEvento cursor: pointer;">
+    						<i class="fa fa-trash" aria-hidden="true"></i>
+    					</buton>
             </div>
             <!-- cd-timeline-content -->
           </div>
-          <!-- cd-timeline-block -->
+
         </section>
         <!-- cd-timeline -->
       </div>
     </div>
   </div>
+  
+  <!--- MODAL AÑADIR NUEVO EVENTO --->
+    <div class="modal fade" id="CrearEvento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h2 class="modal-title">Nuevo Evento</h2></br>
+          </div>
+          <div class="modal-body">
+            <form role="form" method="post">
+              <div class="row">
+                <div class="col-md-4">
+                  <label for="fecha">Fecha Inicio</label>
+                  <input type="date" class="form-control" name="fecha_inicio" value="">
+                </div>
+                <div class="col-md-4">
+                  <label for="fecha">Fecha Fin</label>
+                  <input type="date" class="form-control" name="fecha_fin" value="">
+                </div>
+                <div class="col-md-4">
+                  <label for="titulo_evento">Título</label>
+                  <input type="text" class="form-control" name="titulo_evento" value="">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="descripcion_evento">Descripción</label>
+                  <textarea type="text" class="form-control" name="descripcion_evento" value="" rows="4"></textarea>
+                </div>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-primary float-md-right">
+                <i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir Evento
+              </button>
+              <button type="button" class="btn btn-danger float-md-right" data-dismiss="modal">
+                <i class="fa fa-times" aria-hidden="true"></i> Cerrar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--- MODAL EDITAR EVENTO --->
+      <div class="modal fade" id="EditEvento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h2 class="modal-title">Nuevo Evento</h2></br>
+            </div>
+            <div class="modal-body">
+              <form role="form" method="post">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="fecha">Fecha Inicio</label>
+                    <input type="date" class="form-control" name="fecha_inicio" value="">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="fecha">Fecha Fin</label>
+                    <input type="date" class="form-control" name="fecha_fin" value="">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="titulo_evento">Título</label>
+                    <input type="text" class="form-control" name="titulo_evento" value="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <label for="descripcion_evento">Descripción</label>
+                    <textarea type="text" class="form-control" name="descripcion_evento" value="" rows="4"></textarea>
+                  </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary float-md-right">
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir Evento
+                </button>
+                <button type="button" class="btn btn-danger float-md-right" data-dismiss="modal">
+                  <i class="fa fa-times" aria-hidden="true"></i> Cerrar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
  
  <!-- Javascript -->
  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
