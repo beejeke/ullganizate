@@ -2,7 +2,7 @@
 input[type="email"], 
 input[type="text"],
 input[type="password"],
-select[name="form_rol"] 
+select[name="form_rol"],
 textarea, 
 textarea.form-control {
 	height: 50px;
