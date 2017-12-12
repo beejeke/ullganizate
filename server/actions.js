@@ -8,7 +8,6 @@ var bd = [];
 bd.insert = function(user, pass, email, rol) {
 
   Usuarios.findOne({'local.name': user}, function (err, result) {
-    var rols = 0;
     if (err) {
       console.log(err);
     } else {
@@ -20,8 +19,7 @@ bd.insert = function(user, pass, email, rol) {
           console.log("With pass: "+pass);
           console.log("Email: "+ email);
           console.log("Rol: "+ rol)
-          if(rol = 'Profesor') rols = 1;
-          usuario1 = new Usuarios({'local.name': user, 'local.password': bcrypt.hashSync(pass), 'local.email': email, 'local.rol': rols}, function (err, result) {
+          usuario1 = new Usuarios({'local.name': user, 'local.password': bcrypt.hashSync(pass), 'local.email': email, 'local.rol': rol}, function (err, result) {
             if (err) return handleError(err);
           })
 
@@ -33,6 +31,7 @@ bd.insert = function(user, pass, email, rol) {
     })
 };
 
+//esto esta mal
 bd.delete = function(user) {
 
   console.log(user);
@@ -80,5 +79,4 @@ bd.isInUser = function(user, pass, req) {
     }
   })
 };
-
 module.exports = bd;

@@ -70,7 +70,7 @@
             </div>
             <div class="form-group">
               <label class="sr-only" for="form-username">Email</label>
-              <input type="email" name="form_username" placeholder="Email" class="form-username form-control" id="form-username">
+              <input type="email" name="form_email" placeholder="Email" class="form-username form-control" id="form-username">
             </div>
             <div class="form-group">
               <label class="sr-only" for="form-password">Password</label>
@@ -95,13 +95,13 @@
               <a href="#" class="active" id="login-form-link">Sign In <i class="fa fa-sign-in" aria-hidden="true"></i></a>
             </div>
             <div class="col-md-8">
-              <a href="#" title="Facebook" class="btn btn-facebook btn float-md-right" >
+              <a href="/auth/facebook" title="Facebook" class="btn btn-facebook btn float-md-right" >
                 <i class="fa fa-facebook"></i> Facebook
               </a>
-              <a href="#" title="Facebook" class="btn btn-github btn float-md-right">
+              <a href="/auth/github" title="Facebook" class="btn btn-github btn float-md-right">
                 <i class="fa fa-github" aria-hidden="true"></i> Github
               </a>
-              <a href="#" title="Facebook" class="btn btn-google btn float-md-right">
+              <a href="/auth/twitter" title="Facebook" class="btn btn-google btn float-md-right">
                 <i class="fa fa-google-plus"></i> Google
               </a>
             </div>
@@ -109,10 +109,10 @@
         </div>
         <div class="form-bottom">
           <form role="form" action="/login" method="post" id="login-form" class="login-form">
-            
+
             <div class="form-group">
-              <label class="sr-only" for="form-email">Email</label>
-              <input type="email" name="form_email" placeholder="Email" class="form-username form-control" id="form-username">
+              <label class="sr-only" for="form-username">Email</label>
+              <input type="text" name="form_username" placeholder="Username" class="form-username form-control" id="form-username">
             </div>
             <div class="form-group">
               <label class="sr-only" for="form-password">Password</label>
