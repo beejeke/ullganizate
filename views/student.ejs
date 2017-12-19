@@ -126,7 +126,7 @@
             <h2 class="modal-title">Nuevo Evento</h2></br>
           </div>
           <div class="modal-body">
-            <form role="form" method="post">
+            <form role="form" method="post" action ="/student/evento">
               <div class="row">
                 <div class="form-group col-md-4">
                   <label for="fecha">Fecha Inicio</label>
@@ -148,7 +148,7 @@
                 </div>
               </div>
               <br>
-              <button type="button" class="btn btn-primary" onclick="añadir_evento();">
+              <button type="submit" class="btn btn-primary" onclick="añadir_evento();">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir Evento
               </button>
               <button type="button" class="btn btn-danger" data-dismiss="modal">
