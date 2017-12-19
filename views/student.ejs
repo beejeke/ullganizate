@@ -45,26 +45,26 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link">@berkanrhdz</a>
+          <a class="nav-link"><%- user %></a>
         </li>
         <li class="navbar-item">
-          <a class="nav-link" href="#">LogOut</a>
+          <a class="nav-link" href="/logout">LogOut</a>
         </li>
       </ul>
     </div>
   </nav>
- 
+
   <div class="container" id="">
     <div class="row">
       <div class="col-md-12" id="titulo_timeline">
         <label for="crear_evento">TIMELINE DE EVENTOS DEL USUARIO</label>
         <br>
-        <a data-toggle="modal" href="#CrearEvento" class="btn btn-success" id="crear-evento-boton" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus" aria-hidden="true"></i> Crear Evento</a>    
+        <a data-toggle="modal" href="#CrearEvento" class="btn btn-success" id="crear-evento-boton" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus" aria-hidden="true"></i> Crear Evento</a>
       </div>
     </div>
   </div>
-  
-  
+
+
   <div class="container" id="">
     <div class="row">
       <div class="col-md-12" id="global">
@@ -81,7 +81,7 @@
     				  </strong>
             </div>
             <!-- cd-timeline-img -->
-            
+
             <!-- cd-timeline-content -->
             <div class="cd-timeline-content cd-left" >
               <h2 name="titulos_eventos[]"></h2>
@@ -95,7 +95,7 @@
     					</buton>
             </div>
             <!-- cd-timeline-content -->
-            
+
             <!-- cd-timeline-content -->
             <div class="cd-timeline-content cd-right">
               <h2 name="titulos_eventos[]"></h2>
@@ -116,7 +116,7 @@
       </div>
     </div>
   </div>
-  
+
   <!--- MODAL AÑADIR NUEVO EVENTO --->
     <div class="modal fade" id="CrearEvento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm">
@@ -159,7 +159,7 @@
         </div>
       </div>
     </div>
-    
+
     <!--- MODAL EDITAR EVENTO --->
       <div class="modal fade" id="EditEvento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
@@ -202,14 +202,14 @@
           </div>
         </div>
       </div>
- 
+
  <!-- Javascript -->
- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.1/js/tether.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script> 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
  <script src="js/ullganizate.js"></script>
 
 

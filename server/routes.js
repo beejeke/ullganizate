@@ -8,7 +8,7 @@ var alert = require('alert-node');
 
   var auth = function(req, res, next) {
     console.log("tratando de autenticar"+req.session.admin)
-    if(req.session.admin = true) return next();
+    if(req.session.admin == true || req.session.user != undefined) return next();
     else return res.sendStatus(401);
 
   };
@@ -53,8 +53,9 @@ var alert = require('alert-node');
 
 router.get('/client',auth, function(req, res){
   console.log("usuario autenticado: "+ req.session.user);
-  res.sendFile(path.join(dir, 'student.html'));
+  res.render('student', { user: req.session.user})
 })
+
   router.get('/login', function(req, res){
        res.sendFile(path.join(dir, 'index.html'));
   });
