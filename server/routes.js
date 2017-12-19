@@ -87,6 +87,10 @@ router.get('/client',auth, function(req, res){
        res.sendFile(path.join(dir, 'index.html'));
   });
 
+  router.get('/logout', function(req, res) {
+      req.session.destroy();
+      res.sendFile(path.join(dir, 'index.html'));
+  })
 
 
 //----------------------Twitter--------------------//
