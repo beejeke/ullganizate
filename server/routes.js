@@ -1,9 +1,9 @@
 module.exports = function(router, passport, path, dir) {
-let bd = require('./actions.js');
+var bd = require('./actions.js');
 var passportGithub = require('./passport/auth/github.js');
 var passportTwitter = require('./passport/auth/twitter.js');
 var passportFacebook = require('./passport/auth/facebook.js');
-var alert = require('alert-node');
+
 
 
   var auth = function(req, res, next) {
@@ -46,7 +46,7 @@ var alert = require('alert-node');
         }
       }
       else{
-        alert("No se acepta el caracter % en el usuario");
+
         res.sendFile(path.join(dir, 'index.html'));
       }
   });
@@ -79,7 +79,7 @@ router.get('/client',auth, function(req, res){
           res.sendFile(path.join(dir, 'index.html'));
       }
     }
-    alert("No se acepta el caracter % en el usuario");
+
   res.sendFile(path.join(dir, 'index.html'));
   });
 
