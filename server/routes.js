@@ -53,9 +53,17 @@ var passportFacebook = require('./passport/auth/facebook.js');
 
 router.get('/client',auth, function(req, res){
   console.log("usuario autenticado: "+ req.session.user);
-  res.render('student', { user: req.session.user})
+  bd.getEvent(req.session.user, req, res);
+
 })
 
+router.post('/student/evento', auth, function(req, res){
+  bd.addEvent(req.body.titulo_evento, req.session.user, req.session.user, req.body.fecha_inicio, req.body.fecha_fin, undefined, req.body.descripcion_evento)
+})
+
+router.get('/student/evento', auth, function(req, res){
+  res.render('student', { user: req.session.user})
+})
   router.get('/login', function(req, res){
        res.sendFile(path.join(dir, 'index.html'));
   });

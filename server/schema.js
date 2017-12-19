@@ -21,6 +21,7 @@ var Schema = mongoose.Schema({
         date            : Date
     },
     timeline            : {
+        id              : String,
         titulo          : String,
         nombreDestino   : String,
         nombreEmisor    : String,

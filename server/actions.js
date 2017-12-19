@@ -79,4 +79,40 @@ bd.isInUser = function(user, pass, req) {
     }
   })
 };
+
+bd.addEvent = function(titulo, nombreDestino, nombreEmisor, fi, ff, fm, contenido) {
+var id = nombreDestino + new Date().toLocaleString();
+console.log(id);
+
+    timeline = new Usuarios({'timeline.id': id, 'timeline.titulo': titulo, 'timeline.nombreDestino': nombreDestino, 'timeline.nombreEmisor': nombreEmisor, 'timeline.fi': fi, 'timeline.ff': ff, 'timeline.fm': fm, 'timeline.contenido': contenido}, function (err, result) {
+    if (err)
+    {
+      return handleError(err);
+    }
+  })
+  console.log(timeline);
+  timeline.save (function (err) {
+    if (err) console.log(err);;
+  })
+}
+
+bd.getEvent = function(nombreDestino, req, res){
+  var eventos;
+  console.log("hola")
+  Usuarios.find( {'timeline.nombreDestino': nombreDestino }).exec(function (err, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      if (result != null) {
+        evento = result;
+        res.render('student', { user: req.session.user, evento: result })
+        }
+       else {
+          console.log("No hay eventos.")
+        }
+      }
+    })
+//return eventos;
+}
+
 module.exports = bd;
