@@ -128,30 +128,30 @@
           <div class="modal-body">
             <form role="form" method="post">
               <div class="row">
-                <div class="col-md-4">
+                <div class="form-group col-md-4">
                   <label for="fecha">Fecha Inicio</label>
                   <input type="date" class="form-control" name="fecha_inicio" value="">
                 </div>
-                <div class="col-md-4">
+                <div class="form-group col-md-4">
                   <label for="fecha">Fecha Fin</label>
                   <input type="date" class="form-control" name="fecha_fin" value="">
                 </div>
-                <div class="col-md-4">
+                <div class="form-group col-md-4">
                   <label for="titulo_evento">Título</label>
                   <input type="text" class="form-control" name="titulo_evento" value="">
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-12">
+                <div class="form-group col-md-12">
                   <label for="descripcion_evento">Descripción</label>
                   <textarea type="text" class="form-control" name="descripcion_evento" value="" rows="4"></textarea>
                 </div>
               </div>
               <br>
-              <button type="button" class="btn btn-primary float-md-right" onclick="añadir_evento();">
+              <button type="button" class="btn btn-primary" onclick="añadir_evento();">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir Evento
               </button>
-              <button type="button" class="btn btn-danger float-md-right" data-dismiss="modal">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">
                 <i class="fa fa-times" aria-hidden="true"></i> Cerrar
               </button>
             </form>
@@ -171,30 +171,30 @@
             <div class="modal-body">
               <form role="form" method="post">
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="form-group col-md-4">
                     <label for="fecha">Fecha Inicio</label>
                     <input type="date" class="form-control" name="fecha_inicio" value="">
                   </div>
-                  <div class="col-md-4">
+                  <div class="form-group col-md-4">
                     <label for="fecha">Fecha Fin</label>
                     <input type="date" class="form-control" name="fecha_fin" value="">
                   </div>
-                  <div class="col-md-4">
+                  <div class="form-group col-md-4">
                     <label for="titulo_evento">Título</label>
                     <input type="text" class="form-control" name="titulo_evento" value="">
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-12">
+                  <div class="form-group col-md-12">
                     <label for="descripcion_evento">Descripción</label>
                     <textarea type="text" class="form-control" name="descripcion_evento" value="" rows="4"></textarea>
                   </div>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary float-md-right">
+                <button type="button" class="btn btn-primary" onclick="añadir_evento();">
                   <i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir Evento
                 </button>
-                <button type="button" class="btn btn-danger float-md-right" data-dismiss="modal">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">
                   <i class="fa fa-times" aria-hidden="true"></i> Cerrar
                 </button>
               </form>
