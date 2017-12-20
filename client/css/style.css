@@ -323,6 +323,7 @@ Modules - reusable parts of our design
   width: 90%;
   max-width: 1170px;
   margin: 0 auto;
+  left: 7%;
 }
 .cd-container::after {
   /* clearfix */
@@ -349,8 +350,7 @@ Main components
   content: '';
   position: absolute;
   top: 0;
-  left: 18px;
-  height: 100%;
+  height: 70%;
   width: 4px;
   background: #d7e4ed;
 }
@@ -360,7 +360,7 @@ Main components
     margin-bottom: 3em;
   }
   #cd-timeline::before {
-    left: 50%;
+    left: 5%;
     margin-left: -2px;
   }
 }
@@ -475,7 +475,6 @@ Main components
   .cd-timeline-img {
     width: 60px;
     height: 60px;
-    left: 50%;
     margin-left: -30px;
     /* Force Hardware Acceleration in WebKit */
     -webkit-transform: translateZ(0);
@@ -577,13 +576,6 @@ Main components
   margin: 1em 0;
   line-height: 1.6;
 }
-.cd-timeline-content .cd-read-more {
-  float: right;
-  padding: .8em 1em;
-  background: #acb7c0;
-  color: white;
-  border-radius: 0.25em;
-}
 .no-touch .cd-timeline-content .cd-read-more:hover {
   background-color: #bac4cb;
 }
@@ -618,9 +610,10 @@ Main components
 }
 @media only screen and (min-width: 1170px) {
   .cd-timeline-content {
-    margin-left: 0;
+    margin-left: 70px;
+    margin-bottom: 60px;
     padding: 1.6em;
-    width: 45%;
+    width: 70%;
   }
   
   .cd-timeline-content .cd-read-more {
@@ -785,84 +778,6 @@ Main components
 }
 
 
-#cpestana1 {
-
-  background-color: #A4C5FA;
-  height: 100px;
-  width: 100px;
-  border: 1px solid black;
-  border-radius: 50%;
-  margin-left: -1%; 
-  margin-top: 0.5%; 
-  background-image: url("../img/ficha1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-} 
-
-#cpestana2 {
-  
-  background-color: #A4C5FA;
-  height: 100px;
-  width: 100px;
-  border: 1px solid black;
-  border-radius: 50%;
-  margin-left: -1%; 
-  margin-top: 0.5%; 
-  background-image: url("../img/ficha2.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-} 
-
-#cpestana3 {
-
-  background-color: #A4C5FA;
-  height: 100px;
-  width: 100px;
-  border: 1px solid black;
-  border-radius: 50%;
-  margin-left: -1%; 
-  margin-top: 0.5%; 
-  background-image: url("../img/ficha3.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-} 
-
-#cpestana4 {
-  background-color: #A4C5FA;
-  height: 100px;
-  width: 100px;
-  border: 1px solid black;
-  border-radius: 50%;
-  margin-left: -1%; 
-  margin-top: 0.5%; 
-  background-image: url("../img/ficha4.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-} 
-
-#cuadricula {
-  border: 1px solid black;
-  background-color: rgb(237, 240, 171);
-}
-
-#cuadricula2 {
-  border: 1px solid black;
-  background-color: rgb(237, 240, 171);
-  margin-left: 75px;
-  margin-top: 20px;
-  margin-bottom: 75px;
-}
-
-#cuadricula3 {
-  border: 1px solid black;
-  background-color: rgb(237, 240, 171);
-  margin-bottom: 75px;
-  margin-top: 20px;
-}
 
 
 /***** Media queries *****/
@@ -882,4 +797,3 @@ Main components
     font-size: 32px;
   }
 }
-
