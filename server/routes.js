@@ -7,7 +7,6 @@ var passportFacebook = require('./passport/auth/facebook.js');
 
 
   var auth = function(req, res, next) {
-    console.log("tratando de autenticar"+req.session.admin)
     if(req.session.admin == true || req.session.user != undefined) return next();
     else return res.sendStatus(401);
 
@@ -59,11 +58,13 @@ router.get('/client',auth, function(req, res){
 
 router.post('/student/evento', auth, function(req, res){
   bd.addEvent(req.body.titulo_evento, req.session.user, req.session.user, req.body.fecha_inicio, req.body.fecha_fin, undefined, req.body.descripcion_evento)
+  res.redirect('/client')
 })
 
 router.get('/student/evento', auth, function(req, res){
-  res.render('student', { user: req.session.user})
+  res.redirect('/client')
 })
+
   router.get('/login', function(req, res){
        res.sendFile(path.join(dir, 'index.html'));
   });
@@ -100,7 +101,17 @@ router.get('/student/evento', auth, function(req, res){
       req.session.destroy();
       res.sendFile(path.join(dir, 'index.html'));
   })
+  router.post('/eliminar', function(req, res){
+    console.log("evento: "+req.body.idUser)
+    bd.deleteEvent(req.body.idUser, res, req);
+    res.redirect('/client')
+  })
 
+  router.post('/Edit', function(req, res){
+    console.log(req.body)
+    bd.EditEvent(req.body.titulo_evento, req.body.fecha_inicio, req.body.fecha_fin, Date(), req.body.descripcion_evento, req.body.idUser);
+    res.redirect('/client')
+  })
 
 //----------------------Twitter--------------------//
 

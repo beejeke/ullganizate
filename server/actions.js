@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = require('./schema.js')
 var bcrypt = require('bcrypt-nodejs');
 var Usuarios = mongoose.model('Usuarios', Schema);
-
+var Mes = require('./mes.js')
 
 var bd = [];
 bd.insert = function(user, pass, email, rol) {
@@ -34,7 +34,6 @@ bd.insert = function(user, pass, email, rol) {
 //esto esta mal
 bd.delete = function(user) {
 
-  console.log(user);
   Usuarios.findOne({'local.name' : user}, function (err, result) {
     if (err) {
       console.log(err);
@@ -90,22 +89,18 @@ console.log(id);
       return handleError(err);
     }
   })
-  console.log(timeline);
   timeline.save (function (err) {
     if (err) console.log(err);;
   })
 }
 
 bd.getEvent = function(nombreDestino, req, res){
-  var eventos;
-  console.log("hola")
-  Usuarios.find( {'timeline.nombreDestino': nombreDestino }).exec(function (err, result) {
+  Usuarios.find( {'timeline.nombreDestino': nombreDestino }).sort({'timeline.ff': 1}).exec(function (err, result) {
     if (err) {
       console.log(err);
     } else {
       if (result != null) {
-        evento = result;
-        res.render('student', { user: req.session.user, evento: result })
+        res.render('student', { user: req.session.user, evento: result , Mes: Mes})
         }
        else {
           console.log("No hay eventos.")
@@ -114,5 +109,40 @@ bd.getEvent = function(nombreDestino, req, res){
     })
 //return eventos;
 }
+bd.deleteEvent = function(id, res, req){
+  Usuarios.findOneAndRemove({'timeline.id':id}, function (err, resultado) {
+    if (err) {
+      console.log(err);
+      res.send("ERROR");
+    } else {
+      if (resultado) {
+          console.log("Se ha eliminado un evento de : "+ req.session.user)
+        }
+       else {
+        console.log('No se ha encontrado el elemento que desea borrar');
+        }
+      }
+  })
+}
 
+bd.EditEvent = function(titulo, fi, ff, fm, contenido, id){
+  Usuarios.findOne({'timeline.id':id}, function (err, result) {
+    if (err) {
+      console.log(err);
+      res.send("ERROR");
+    } else {
+
+      if (result != null) {
+          result.timeline.titulo = titulo;
+          result.timeline.fi = fi;
+          result.timeline.ff = ff;
+          result.timeline.contenido = contenido;
+          result.save();
+
+      } else {
+        console.log('No se ha encontrado el elemento que desea borrar');
+      }
+    }
+  })
+}
 module.exports = bd;

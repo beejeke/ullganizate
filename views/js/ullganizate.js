@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 
 function añadir_evento() {
-  
+
   fecha_fin = document.getElementsByName('fecha_fin')[0].value;
   fecha_fin_dia = fecha_fin.substring(8,10);
   fecha_fin_mes = fecha_fin.substring(5,7);
@@ -14,7 +14,7 @@ function añadir_evento() {
   if (fecha_fin_mes == 07) { fecha_fin_mes = 'jul' } if (fecha_fin_mes == 08) { fecha_fin_mes = 'ago' }
   if (fecha_fin_mes == 09) { fecha_fin_mes = 'sep' } if (fecha_fin_mes == 10) { fecha_fin_mes = 'oct' }
   if (fecha_fin_mes == 11) { fecha_fin_mes = 'nov' } if (fecha_fin_mes == 12) { fecha_fin_mes = 'dic' }
-  
+
   document.getElementsByName('fecha_fin_evento_mes[]')[0].innerHTML = fecha_fin_mes;
   document.getElementsByName('fecha_fin_evento_dia[]')[0].innerHTML = fecha_fin_dia;
   document.getElementsByName('titulos_eventos[]')[0].innerHTML =  document.getElementsByName('titulo_evento')[0].value;

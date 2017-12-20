@@ -30,7 +30,7 @@ mongoose.connect('mongodb://localhost:27018/usuarios', function(error) {
 
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'ejs');
-  
+
   app.use('/', express.static('client'));
 
 
