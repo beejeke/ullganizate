@@ -3,8 +3,14 @@ var Schema = require('./schema.js')
 var bcrypt = require('bcrypt-nodejs');
 var Usuarios = mongoose.model('Usuarios', Schema);
 var Mes = require('./mes.js')
+var Fecha = require('./fecha.js')
+var Fechas=[];
 
 var bd = [];
+
+Fechas.Mes = Mes;
+Fechas.Fecha = Fecha;
+
 bd.insert = function(user, pass, email, rol) {
 
   Usuarios.findOne({'local.name': user}, function (err, result) {
@@ -64,7 +70,6 @@ bd.isInUser = function(user, pass, req) {
       if (result != null) {
         if (result.local.username = user && bcrypt.compareSync(pass, result.local.password)) {
           console.log("Usuario Correcto.");
-
           req.session.user = req.body.form_username;
           req.session.admin = true;
           console.log("correcto");
@@ -99,8 +104,16 @@ bd.getEvent = function(nombreDestino, req, res){
     if (err) {
       console.log(err);
     } else {
+
       if (result != null) {
-        res.render('student', { user: req.session.user, evento: result , Mes: Mes})
+        for(var i = 0; i < result.length; i++)
+        {
+          if(result[i].timeline.fi == null) result[i].timeline.fi = new Date();
+          if(result[i].timeline.ff == null) result[i].timeline.ff = new Date();
+          result[i].save();
+        }
+        //console.log(result);
+        res.render('student', { user: req.session.user, evento: result , Fechas: Fechas})
         }
        else {
           console.log("No hay eventos.")
@@ -134,8 +147,10 @@ bd.EditEvent = function(titulo, fi, ff, fm, contenido, id){
 
       if (result != null) {
           result.timeline.titulo = titulo;
-          result.timeline.fi = fi;
-          result.timeline.ff = ff;
+          if(fi != null) result.timeline.fi = fi;
+          else result.timeline.fi = Date();
+          if(ff != null) result.timeline.ff = ff;
+          else result.timeline.ff = Date();
           result.timeline.contenido = contenido;
           result.save();
 

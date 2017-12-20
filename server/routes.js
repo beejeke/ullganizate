@@ -34,7 +34,7 @@ var passportFacebook = require('./passport/auth/facebook.js');
           bd.isInUser(req.body.form_username, req.body.form_password, req)
           if(req.session.admin = true)
           {
-
+            req.session.user = req.body.form_username;
             console.log('Logged as: '+ req.body.form_username)
 
             res.redirect('/client');
