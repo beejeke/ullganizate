@@ -73,9 +73,9 @@
 
 
 
-
-
-            <% for(var i=0; i<evento.length ; i++ ) { %>
+            <%console.log("Esto es el html \n"); %>
+            <% for(var i=0; i < evento.length ; i++ ) { %>
+              <% if(evento.length > 0) { %>
           <div class="cd-timeline-block" name='cd-timeline-block' id="cd-timeline-block" >
             <input type="hidden" name="numero_eventos[]" value="">
             <form id= "<%='delete'+i%>"action = "/eliminar" method = "post" >
@@ -86,7 +86,7 @@
               <strong>
                 <span name="fecha_fin_evento_dia[]"><%=evento[i].timeline.ff.getDate()%></span>
                 </br>
-                <div name="fecha_fin_evento_mes[]" ><%=Mes(evento[i].timeline.ff.getMonth())%></div>
+                <div name="fecha_fin_evento_mes[]" ><%=Fechas.Mes(evento[i].timeline.ff.getMonth())%></div>
               </strong>
             </div>
             <!-- cd-timeline-img -->
@@ -94,7 +94,7 @@
             <!-- cd-timeline-content -->
             <div class="cd-timeline-content ">
               <h2 name="titulos_eventos[]"><%=evento[i].timeline.titulo%></h2>
-              <span name="fechas_creacion_eventos[]"><%=evento[i].timeline.fi.getDate()+"-"+evento[i].timeline.fi.getMonth()+"-"+evento[i].timeline.fi.getFullYear()%></span>
+              <span name="fechas_creacion_eventos[]"><%=evento[i].timeline.fi.getDate()+"-"+(evento[i].timeline.fi.getMonth()+1)+"-"+evento[i].timeline.fi.getFullYear()%></span>
               <p name="descripcion_eventos[]"><%=evento[i].timeline.contenido%></p>
               <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="<%='#EditEvento'+i%>">
                 <i class="fa fa-wrench" aria-hidden="true"> </i>
@@ -107,7 +107,8 @@
             </div>
             <!-- cd-timeline-content -->
           </div>
-        <%} %>
+
+        <%} } %>
 
 
           <!-- cd-timeline-block -->
@@ -163,6 +164,7 @@
     </div>
 
     <!--- MODAL EDITAR EVENTO --->
+        <% if(evento.length > 0) {  %>
     <% for(var i=0; i<evento.length ; i++ ) { %>
 
       <div class="modal fade" id="<%='EditEvento'+i%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -178,11 +180,11 @@
                   <div class="form-group col-md-4">
                     <label for="fecha">Fecha Inicio</label>
 
-                    <input type="date" class="form-control" name="fecha_inicio" value="<%= evento[i].timeline.fi.getFullYear()+'-'+evento[i].timeline.fi.getMonth()+'-'+evento[i].timeline.fi.getDate() %>">
+                    <input type="date" class="form-control" name="fecha_inicio" value="<%= Fechas.Fecha( evento[i].timeline.fi )%>" >
                   </div>
                   <div class="form-group col-md-4">
                     <label for="fecha">Fecha Fin</label>
-                    <input type="date" class="form-control" name="fecha_fin" value="<%= evento[i].timeline.ff.getFullYear()+'-'+evento[i].timeline.ff.getMonth()+'-'+evento[i].timeline.ff.getDate() %>">
+                    <input type="date" class="form-control" name="fecha_fin" value="<%= Fechas.Fecha( evento[i].timeline.ff )%>" >
                   </div>
                   <input name = "idUser" value = "<%=evento[i].timeline.id%>" HIDDEN/>
                   <div class="form-group col-md-4">
@@ -199,7 +201,7 @@
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary">
-                  <i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir Evento
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i> Editar Evento
                 </button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">
                   <i class="fa fa-times" aria-hidden="true"></i> Cerrar
@@ -209,7 +211,7 @@
           </div>
         </div>
       </div>
-      <% }%>
+      <%} }%>
  <!-- Javascript -->
  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
