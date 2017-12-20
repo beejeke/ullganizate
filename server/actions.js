@@ -62,20 +62,22 @@ bd.delete = function(user) {
   })
 };
 
-bd.isInUser = function(user, pass, req) {
+bd.isInUser = function(user, pass, req, res) {
   Usuarios.findOne({'local.name': user}, function (err, result) {
     if (err) {
       console.log(err);
     } else {
       if (result != null) {
         if (result.local.username = user && bcrypt.compareSync(pass, result.local.password)) {
-          console.log("Usuario Correcto.");
+
+
           req.session.user = req.body.form_username;
           req.session.admin = true;
-          console.log("correcto");
+          req.session.rol = result.local.rol;
+          res.redirect('/client')
         }
       } else {
-          req.session.admin = false;
+        req.session.admin = false;
         console.log('Usuario inexistente.');
 
         //res.sendFile('/client/index.html');
@@ -106,14 +108,8 @@ bd.getEvent = function(nombreDestino, req, res){
     } else {
 
       if (result != null) {
-        for(var i = 0; i < result.length; i++)
-        {
-          if(result[i].timeline.fi == null) result[i].timeline.fi = new Date();
-          if(result[i].timeline.ff == null) result[i].timeline.ff = new Date();
-          result[i].save();
-        }
-        //console.log(result);
-        res.render('student', { user: req.session.user, evento: result , Fechas: Fechas})
+        if(req.session.rol == 1) res.render('student', { user: req.session.user, evento: result , Fechas: Fechas})
+        if(req.session.rol == 2) res.render('profesorDest', { user: req.session.user, evento: result , Fechas: Fechas})
         }
        else {
           console.log("No hay eventos.")
@@ -122,6 +118,24 @@ bd.getEvent = function(nombreDestino, req, res){
     })
 //return eventos;
 }
+
+bd.getEventEnviados = function(nombreEmisor, req, res){
+  Usuarios.find( {'timeline.nombreEmisor': nombreEmisor }).sort({'timeline.ff': 1}).exec(function (err, result) {
+    if (err) {
+      console.log(err);
+    } else {
+
+      if (result != null) {
+          res.render('profesorEmi', { user: req.session.user, evento: result , Fechas: Fechas})
+        }
+       else {
+          console.log("No hay eventos.")
+        }
+      }
+    })
+//return eventos;
+}
+
 bd.deleteEvent = function(id, res, req){
   Usuarios.findOneAndRemove({'timeline.id':id}, function (err, resultado) {
     if (err) {
@@ -140,6 +154,29 @@ bd.deleteEvent = function(id, res, req){
 
 bd.EditEvent = function(titulo, fi, ff, fm, contenido, id){
   Usuarios.findOne({'timeline.id':id}, function (err, result) {
+    if (err) {
+      console.log(err);
+      res.send("ERROR");
+    } else {
+
+      if (result != null) {
+          result.timeline.titulo = titulo;
+          if(fi != null) result.timeline.fi = fi;
+          else result.timeline.fi = Date();
+          if(ff != null) result.timeline.ff = ff;
+          else result.timeline.ff = Date();
+          result.timeline.contenido = contenido;
+          result.save();
+
+      } else {
+        console.log('No se ha encontrado el elemento que desea borrar');
+      }
+    }
+  })
+}
+
+bd.getRol= function(user){
+  Usuarios.findOne({'local.name':user}, function (err, result) {
     if (err) {
       console.log(err);
       res.send("ERROR");

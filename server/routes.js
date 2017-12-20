@@ -31,15 +31,9 @@ var passportFacebook = require('./passport/auth/facebook.js');
           res.sendFile(path.join(dir, 'index.html'));
 
         } else {
-          bd.isInUser(req.body.form_username, req.body.form_password, req)
-          if(req.session.admin = true)
+          bd.isInUser(req.body.form_username, req.body.form_password, req, res)
+          if(req.session.admin != true)
           {
-            req.session.user = req.body.form_username;
-            console.log('Logged as: '+ req.body.form_username)
-
-            res.redirect('/client');
-          } else {
-
             res.sendFile(path.join(dir, 'index.html'));
           }
         }
@@ -51,14 +45,24 @@ var passportFacebook = require('./passport/auth/facebook.js');
   });
 
 router.get('/client',auth, function(req, res){
-  console.log("usuario autenticado: "+ req.session.user);
+  console.log("Rol cliente: "+req.session.rol)
+  console.log("Usuario autenticado: "+ req.session.user);
   bd.getEvent(req.session.user, req, res);
-
 })
+
+router.get('/profEnviados', function(req, res){
+    bd.getEventEnviados(req.session.user, req, res);
+})
+
 
 router.post('/student/evento', auth, function(req, res){
   bd.addEvent(req.body.titulo_evento, req.session.user, req.session.user, req.body.fecha_inicio, req.body.fecha_fin, undefined, req.body.descripcion_evento)
   res.redirect('/client')
+})
+
+router.post('/profesor/evento', auth, function(req, res){
+  bd.addEvent(req.body.titulo_evento, req.body.destino_evento, req.session.user, req.body.fecha_inicio, req.body.fecha_fin, undefined, req.body.descripcion_evento)
+  res.redirect('/profEnviados')
 })
 
 router.get('/student/evento', auth, function(req, res){
@@ -71,7 +75,7 @@ router.get('/student/evento', auth, function(req, res){
 
   router.post('/register', function(req, res){
 
-    if(!req.body.form_username.match(/*%*/))
+    if(!req.body.form_username.match(/.*%.*/))
     {
       console.log("Usuario: "+ req.body.form_username)
       console.log("Contraseña: "+ req.body.form_password)
@@ -87,6 +91,9 @@ router.get('/student/evento', auth, function(req, res){
           bd.insert(req.body.form_username, req.body.form_password, req.body.form_email, req.body.form_rol);
           res.sendFile(path.join(dir, 'index.html'));
       }
+    }
+    else{
+      console.log("por poner algo")
     }
 
   res.sendFile(path.join(dir, 'index.html'));
@@ -113,6 +120,8 @@ router.get('/student/evento', auth, function(req, res){
     res.redirect('/client')
   })
 
+
+
 //----------------------Twitter--------------------//
 
   router.get('/auth/twitter', passportTwitter.authenticate('twitter'));
@@ -120,6 +129,7 @@ router.get('/student/evento', auth, function(req, res){
   router.get('/auth/twitter/callback',
   passportTwitter.authenticate('twitter', { failureRedirect: '/login' }), function(req, res) {
       console.log("todo correcto con twitter")
+      req.session.rol = 1;
       req.session.user = req.user.social.name;
       req.session.admin = true;
           res.redirect('/client')
@@ -134,7 +144,7 @@ router.get('/auth/github', passportGithub.authenticate('github', { scope: [ 'use
 router.get('/auth/github/callback',
   passportGithub.authenticate('github', { failureRedirect: '/' }), function(req, res) {
     console.log("todo correcto con github")
-          console.log(req.user)
+    req.session.rol = 1;
     req.session.user = req.user.social.name;
     req.session.admin = true;
     res.redirect('/client')
@@ -149,7 +159,7 @@ router.get('/auth/github/callback',
 
   router.get('/auth/facebook/callback',
     passportFacebook.authenticate('facebook', { failureRedirect: '/' }), function(req, res) {
-
+      req.session.rol = 1;
       req.session.user = req.user.social.name;
       req.session.admin = true;
       res.redirect('/client')

@@ -20,34 +20,6 @@
 
 <body>
 
-  <div class="cd-timeline-block" name='cd-timeline-block' id="cd-timeline-block" style="display:none;">
-    <input type="hidden" name="numero_eventos[]" value="">
-    <!-- cd-timeline-img -->
-    <div class="cd-timeline-img cd-picture">
-      <strong>
-        <span name="fecha_fin_evento_dia[]"></span>
-        </br>
-        <span name="fecha_fin_evento_mes[]"></span>
-      </strong>
-    </div>
-    <!-- cd-timeline-img -->
-    
-    <!-- cd-timeline-content -->
-    <div class="cd-timeline-content ">
-      <h2 name="titulos_eventos[]"></h2>
-      <span name="fechas_creacion_eventos[]"></span>
-      <p name="descripcion_eventos[]"></p>
-      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#EditEvento">
-        <i class="fa fa-wrench" aria-hidden="true"> </i>
-      </button>
-      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#EliminarEvento cursor: pointer;">
-        <i class="fa fa-trash" aria-hidden="true"></i>
-      </buton>
-    </div>
-    <!-- cd-timeline-content -->
-  </div>
-  
-
    <div class="container" id="container-title">
      <div class="page-header">
        <div class="row">
@@ -65,7 +37,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="/client">MisEventos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Help</a>
@@ -73,39 +45,80 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link">@berkanrhdz</a>
+          <a class="nav-link"><%- user %></a>
         </li>
         <li class="navbar-item">
-          <a class="nav-link" href="#">LogOut</a>
+          <a class="nav-link" href="/logout">LogOut</a>
         </li>
       </ul>
     </div>
   </nav>
- 
+
   <div class="container" id="">
     <div class="row">
       <div class="offset-md-2 col-md-8 offset-md-2" id="titulo_timeline">
         <label for="crear_evento">TIMELINE DE EVENTOS DEL USUARIO</label>
         <br>
-        <a data-toggle="modal" href="#CrearEvento" class="btn btn-success" id="crear-evento-boton" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus" aria-hidden="true"></i> Crear Evento</a>    
+        <a data-toggle="modal" href="#CrearEvento" class="btn btn-success" id="crear-evento-boton" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus" aria-hidden="true"></i> Crear Evento</a>
       </div>
     </div>
   </div>
-  
-  
+
   <div class="container" id="">
     <div class="row">
       <div class="offset-md-2 col-md-8 offset-md-2" id="global">
+
         <section id="cd-timeline" class="cd-container" id="mensaje">
-          <div class="" id="aux"> EVENTOSSSSSSS</div>
+
+
+
+
+            <% for(var i=0; i < evento.length ; i++ ) { %>
+              <% if(evento.length > 0) { %>
+          <div class="cd-timeline-block" name='cd-timeline-block' id="cd-timeline-block" >
+            <input type="hidden" name="numero_eventos[]" value="">
+            <form id= "<%='delete'+i%>"action = "/eliminar" method = "post" >
+              <input name = "idUser" value = "<%=evento[i].timeline.id%>" HIDDEN/>
+            </form>
+            <!-- cd-timeline-img -->
+            <div class="cd-timeline-img cd-picture">
+              <strong>
+                <span name="fecha_fin_evento_dia[]"><%=evento[i].timeline.ff.getDate()%></span>
+                </br>
+                <div name="fecha_fin_evento_mes[]" ><%=Fechas.Mes(evento[i].timeline.ff.getMonth())%></div>
+              </strong>
+            </div>
+            <!-- cd-timeline-img -->
+
+            <!-- cd-timeline-content -->
+            <div class="cd-timeline-content ">
+              <h2 name="titulos_eventos[]"><%=evento[i].timeline.titulo%></h2>
+              <span name="fechas_creacion_eventos[]"><%=evento[i].timeline.fi.getDate()+"-"+(evento[i].timeline.fi.getMonth()+1)+"-"+evento[i].timeline.fi.getFullYear()%></span>
+              <p name="descripcion_eventos[]"><%=evento[i].timeline.contenido%></p>
+              <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="<%='#EditEvento'+i%>">
+                <i class="fa fa-wrench" aria-hidden="true"> </i>
+              </button>
+
+              <button type="submit" form="<%='delete'+i%>" class="btn btn-danger btn-sm" action data-toggle="modal">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+              </buton>
+
+            </div>
+            <!-- cd-timeline-content -->
+          </div>
+
+        <%} } %>
+
+
           <!-- cd-timeline-block -->
+
 
         </section>
         <!-- cd-timeline -->
       </div>
     </div>
   </div>
-  
+
   <!--- MODAL AÑADIR NUEVO EVENTO --->
     <div class="modal fade" id="CrearEvento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm">
@@ -115,7 +128,7 @@
             <h2 class="modal-title">Nuevo Evento</h2></br>
           </div>
           <div class="modal-body">
-            <form role="form" method="post">
+            <form role="form" method="post" action ="/profesor/evento">
               <div class="row">
                 <div class="form-group col-md-4">
                   <label for="fecha">Fecha Inicio</label>
@@ -131,13 +144,19 @@
                 </div>
               </div>
               <div class="row">
+                <div class="form-group col-md-4">
+                  <label for="Destino">Añadir evento a</label>
+                  <input type="text" class="form-control" name="destino_evento" value="" required>
+                </div>
+              </div>
+              <div class="row">
                 <div class="form-group col-md-12">
                   <label for="descripcion_evento">Descripción</label>
                   <textarea type="text" class="form-control" name="descripcion_evento" value="" rows="4"></textarea>
                 </div>
               </div>
               <br>
-              <button type="button" class="btn btn-primary" onclick="añadir_evento();">
+              <button type="submit" class="btn btn-primary" >
                 <i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir Evento
               </button>
               <button type="button" class="btn btn-danger" data-dismiss="modal">
@@ -148,9 +167,12 @@
         </div>
       </div>
     </div>
-    
+
     <!--- MODAL EDITAR EVENTO --->
-      <div class="modal fade" id="EditEvento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <% if(evento.length > 0) {  %>
+    <% for(var i=0; i<evento.length ; i++ ) { %>
+
+      <div class="modal fade" id="<%='EditEvento'+i%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
           <div class="modal-content">
             <div class="modal-header">
@@ -158,30 +180,33 @@
               <h2 class="modal-title">Editar Evento</h2></br>
             </div>
             <div class="modal-body">
-              <form role="form" method="post">
+              <form role="form" method="post" action="/Edit">
                 <div class="row">
                   <div class="form-group col-md-4">
                     <label for="fecha">Fecha Inicio</label>
-                    <input type="date" class="form-control" name="fecha_inicio" value="">
+
+                    <input type="date" class="form-control" name="fecha_inicio" value="<%= Fechas.Fecha( evento[i].timeline.fi )%>" >
                   </div>
                   <div class="form-group col-md-4">
                     <label for="fecha">Fecha Fin</label>
-                    <input type="date" class="form-control" name="fecha_fin" value="">
+                    <input type="date" class="form-control" name="fecha_fin" value="<%= Fechas.Fecha( evento[i].timeline.ff )%>" >
                   </div>
+                  <input name = "idUser" value = "<%=evento[i].timeline.id%>" HIDDEN/>
                   <div class="form-group col-md-4">
                     <label for="titulo_evento">Título</label>
-                    <input type="text" class="form-control" name="titulo_evento" value="">
+                    <input type="text" class="form-control" name="titulo_evento" value="<%=evento[i].timeline.titulo%>">
                   </div>
+
                 </div>
                 <div class="row">
                   <div class="form-group col-md-12">
                     <label for="descripcion_evento">Descripción</label>
-                    <textarea type="text" class="form-control" name="descripcion_evento" value="" rows="4"></textarea>
+                    <textarea type="text" class="form-control" name="descripcion_evento"value="" rows="4"><%=evento[i].timeline.contenido%></textarea>
                   </div>
                 </div>
                 <br>
-                <button type="button" class="btn btn-primary" onclick="añadir_evento();">
-                  <i class="fa fa-plus-circle" aria-hidden="true"></i> Añadir Evento
+                <button type="submit" class="btn btn-primary">
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i> Editar Evento
                 </button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">
                   <i class="fa fa-times" aria-hidden="true"></i> Cerrar
@@ -191,16 +216,15 @@
           </div>
         </div>
       </div>
- 
+      <%} }%>
  <!-- Javascript -->
- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.1/js/tether.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script> 
- <script src="js/ullganizate.js"></script>
-
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+ <script src="js/ullganizate.js"/>
 
 </body>
 
