@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Edición HTML · GitBook</title>
+        <title>Preguntas · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../Ejemplos/Ejemplo.html" />
     
-    
-    <link rel="prev" href="../primerosPasos/first.html" />
+    <link rel="prev" href="../Conclusiones/Conclusiones.html" />
     
 
     </head>
@@ -193,9 +191,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.9" data-path="Datos.html">
+        <li class="chapter " data-level="1.9" data-path="../MostrarDatos/Datos.html">
             
-                <a href="Datos.html">
+                <a href="../MostrarDatos/Datos.html">
             
                     
                     Edición HTML
@@ -232,9 +230,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="../Preguntas/Preguntas.html">
+        <li class="chapter active" data-level="1.12" data-path="Preguntas.html">
             
-                <a href="../Preguntas/Preguntas.html">
+                <a href="Preguntas.html">
             
                     
                     Preguntas
@@ -275,7 +273,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Edición HTML</a>
+        <a href=".." >Preguntas</a>
     </h1>
 </div>
 
@@ -290,110 +288,40 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="mostrar-informaci&#xF3;n">Mostrar Informaci&#xF3;n</h1>
-<p>El siguiente apartado abordar&#xE1; los distintas posibilidades que tenemos para mostrar informaci&#xF3;n en el html o ocultarla mediante vue.</p>
-<h3 id="mostrar-informaci&#xF3;n-adicional">Mostrar Informaci&#xF3;n adicional.</h3>
-<p>Para comenzar, abordaremos como mostrar un mensaje al poner el cursor encima de un texto determinado. Para ello debemos hacer uso de v-bind:title.
-A continuaci&#xF3;n vemos un ejemplo de su uso.</p>
-<pre><code>&lt;html&gt;
-  &lt;head&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h2&gt;Ejemplo pasando el rat&#xF3;n:&lt;/h2&gt;
-    &lt;div id=&quot;app-2&quot;&gt;
-      &lt;span v-bind:title=&quot;message&quot;&gt;
-        Pasando el rat&#xF3;n por encima de este texto y esperando unos segundos,
-        aparecer&#xE1; cuando ha cargado la p&#xE1;gina.
-      &lt;/span&gt;
-      &lt;br&gt;
-      &lt;span v-bind:title=&quot;message2&quot;&gt;
-      Aqu&#xED; tenemos un mensaje distinto.
-      &lt;/span&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-  &lt;/body&gt;
-  &lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;
-  &lt;script src=&quot;MostrarInfo.js&quot;&gt;&lt;/script&gt;
-&lt;/html&gt;
-</code></pre><p>El mensaje que se desea mostrar ir&#xE1; en el fichero js:</p>
-<pre><code>var app2 = new Vue({
-  el: &apos;#app-2&apos;,
-  data: {
-    message: &apos;P&#xE1;gina cargada el &apos; + new Date().toLocaleString(),
-    message2: &apos;Un mensaje totalmente distinto&apos;
-  }
-});
-</code></pre><p>El resultado que obtenemos es el siguiente:</p>
-<p><img src="1.png" alt="1"></p>
-<h3 id="editor">Editor.</h3>
-<p>Otras de las opciones que tenemos con vuejs es ir mostrando por pantalla lo que introduzcamos en un cuadro de texto sin necesidad de actualizar la p&#xE1;gina. Adem&#xE1;s, todo lo que incluyamos ser&#xE1; pasado de formato markdown a html.
-Para este tipo de ejercicio, necesitaremos incorporar un paquete para parsear y compilar markdown siendo el marked@0.3.6, y lodash@4.16.0 para trabajar con las cadenas que obtendremos.</p>
-<pre><code>&lt;html&gt;
-  &lt;head&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h2&gt;Editor de texto utilizando vuejs:&lt;/h2&gt;
-    &lt;p&gt;A continucaci&#xF3;n podemos encontrar un editor de texto, que saca por pantalla lo que escribimos.&lt;/p&gt;
+                                <h1 id="preguntas-propuestas">Preguntas Propuestas</h1>
+<h3 id="1-elegir---entre---las---opciones---dadas---cua&#x301;l---no---es---verdadera">1) Elegir   entre   las   opciones   dadas   cua&#x301;l   no   es   verdadera:</h3>
+<pre><code>a) VUEJS provee de gran cantidad de documentacio&#x301;n en cualquier idioma.
 
-    &lt;div id=&quot;editor&quot;&gt;
-      &lt;textarea :value=&quot;input&quot; @input=&quot;update&quot;&gt;&lt;/textarea&gt;
-      &lt;div v-html=&quot;compiledMarkdown&quot;  id=&quot;salida&quot; &gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-  &lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;https://unpkg.com/marked@0.3.6&quot;&gt;&lt;/script&gt;
+b) VUEJS es flexible con una curva de aprendizaje bastante baja.
 
-        &lt;script src=&quot;https://unpkg.com/lodash@4.16.0&quot;&gt;&lt;/script&gt;
-  &lt;script src=&quot;Editor.js&quot;&gt;&lt;/script&gt;
-&lt;/html&gt;
-</code></pre><p>La salida vendr&#xE1; del div con id salida en formato html.</p>
-<p>El c&#xF3;digo js necesario ser&#xE1;:</p>
-<pre><code> new Vue({
-   el: &apos;#editor&apos;,
-   data: {
-     input: &apos;# hello&apos;
-   },
-   computed: {
-     compiledMarkdown: function () {
-       return marked(this.input, { sanitize: true })
-     }
-   },
-   methods: {
-     update: _.debounce(function (e) {
-       this.input = e.target.value
-     }, 500)
-   }
- });
-</code></pre><p> La funci&#xF3;n dentro de compiledMarkdown contendr&#xE1; el valor que se devolver&#xE1; una vez introducido. Con la funci&#xF3;n marked() haremos la conversi&#xF3;n de texto markdown a html. En caso de no querer compilarlo, devolveremos directamente this.input.
- Con la funci&#xF3;n debounce en update actualizaremos el valor mostrado por pantalla.</p>
-<p> A continuaci&#xF3;n se mostrar&#xE1; un ejemplo sin compilar el markdown:</p>
-<p> <img src="SinCompilar.png" alt="2"></p>
-<p> El siguiente ejemplo es con el makdown compilado:</p>
-<p> <img src="Compilado.png" alt="3"></p>
-<h3 id="ocultar-texto">Ocultar texto</h3>
-<p> Podemos ocultar texto mediante el tipo v-if de vue. Si el valor del atributo es verdadero, se mostrar&#xE1; la variable, en caso de ser falso, no se mostrar&#xE1;.</p>
-<p>A continuaci&#xF3;n tendremos un ejemplo de esta funci&#xF3;n.</p>
-<pre><code>&lt;h2&gt;Texto oculto/visible:&lt;/h2&gt;
-&lt;p&gt;Justo debajo se encuentra un texto el cual se puede ocultar o mostrar desde el archivo js utilizando vuejs.&lt;/p&gt;
-&lt;div id=&quot;app-3&quot;&gt;
-  &lt;span v-if=&quot;seen&quot;&gt;Now you see me&lt;/span&gt;
-&lt;/div&gt;
-&lt;br&gt;
-</code></pre><p>En este caso, el atributo se llamar&#xE1; seen, aunque se puede cambiar el nombre libremente.</p>
-<pre><code>var app3 = new Vue({
-  el: &apos;#app-3&apos;,
-  data: {
-    seen: true
-  }
-});
-</code></pre><p>El resultado se puede ver a continuaci&#xF3;n:
-seen = true:
-<img src="True.png" alt="4"></p>
-<p>seen = false:
-<img src="False.png" alt="5"></p>
-<p>Como vemos, solo se puede modificar el valor mediante el fichero js, pero combin&#xE1;ndolo con la funcionalidad anterior podemos indicar que si se desea borrar, se oculte la l&#xED;nea:</p>
-<p><img src="Borrado.png" alt="6"></p>
+c) VUEJS en comparacio&#x301;n con Angular es mucho ma&#x301;s sencillo y menos ri&#x301;gido.
+</code></pre><h3 id="2-&#xBF;cua&#x301;l-de-las-siguientes-opciones-no-es-una-versio&#x301;n-de-js">2) &#xBF;Cua&#x301;l de las siguientes opciones no es una versio&#x301;n de JS?</h3>
+<pre><code> a) ECMAScript 2
 
+ b) ECMAScript 6.1
+
+ c) ECMAScript 7
+
+ d) ECMAScript 5.1
+</code></pre><h3 id="3-para-utilizar-vuejs-&#xBF;que&#x301;-se-debe-an&#x303;adir">3) Para utilizar VUEJS &#xBF;que&#x301; se debe an&#x303;adir?</h3>
+<pre><code> a) https://unpkg.com/vue
+
+ b) &lt;link rel=&quot;stylesheet&quot; href=&quot;//vue.org/3.1.0/library/vue.min.js&quot;&gt;
+
+ c) #include &lt;stdvuejs&gt;
+</code></pre><h3 id="4-&#xBF;co&#x301;mo-seri&#x301;a-la-sintaxis-de-un-template-en-vuejs">4) &#xBF;Co&#x301;mo seri&#x301;a la sintaxis de un template en VUEJS?</h3>
+<pre><code>a) &lt;template&gt; ---- &lt;script&gt; ---- &lt;style&gt;
+
+b) &lt;script&gt; ---- &lt;template&gt; ---- &lt;style&gt;
+
+c) &lt;script&gt; ---- &lt;style&gt; ---- &lt;template&gt;
+</code></pre><h3 id="5-seleccionar-de-las-siguientes-afirmaciones-la-correcta">5) Seleccionar de las siguientes afirmaciones la correcta.</h3>
+<pre><code>a) VUEJS cuenta con una libreri&#x301;a ligera con gran variedad de funcionalidades.
+
+b) La integracio&#x301;n de VUEJS en tecnologi&#x301;as como HTML es costosa y difi&#x301;cil de lograr.
+
+c) VUEJS emplea la comprobacio&#x301;n por la cual alcanza la vinculacio&#x301;n de datos bidireccional, lo que hace que sea ma&#x301;s lento.
+</code></pre>
                                 
                                 </section>
                             
@@ -420,14 +348,10 @@ seen = true:
 
             
                 
-                <a href="../primerosPasos/first.html" class="navigation navigation-prev " aria-label="Previous page: Uso Básico">
+                <a href="../Conclusiones/Conclusiones.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Conclusion">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../Ejemplos/Ejemplo.html" class="navigation navigation-next " aria-label="Next page: Ejemplos">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -436,7 +360,7 @@ seen = true:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Edición HTML","level":"1.9","depth":1,"next":{"title":"Ejemplos","level":"1.10","depth":1,"path":"Ejemplos/Ejemplo.md","ref":"Ejemplos/Ejemplo.md","articles":[]},"previous":{"title":"Uso Básico","level":"1.8","depth":1,"path":"primerosPasos/first.md","ref":"primerosPasos/first.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"MostrarDatos/Datos.md","mtime":"2017-12-14T18:50:42.059Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-21T16:18:45.379Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Preguntas","level":"1.12","depth":1,"previous":{"title":"Conclusion","level":"1.11","depth":1,"path":"Conclusiones/Conclusiones.md","ref":"Conclusiones/Conclusiones.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Preguntas/Preguntas.md","mtime":"2017-12-21T16:15:59.754Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-21T16:18:45.379Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
