@@ -10,3 +10,5 @@
 * [Uso Básico](primerosPasos/first.md)
 * [Edición HTML](MostrarDatos/Datos.md)
 * [Ejemplos](Ejemplos/Ejemplo.md)
+* [Conclusion](Conclusiones/Conclusiones.md)
+* [Preguntas](Preguntas/Preguntas.md)
