@@ -8,7 +8,7 @@ var passportFacebook = require('./passport/auth/facebook.js');
 
   var auth = function(req, res, next) {
     if(req.session.admin == true || req.session.user != undefined) return next();
-    else return res.sendStatus(401);
+    else return res.redirect('/');
 
   };
 

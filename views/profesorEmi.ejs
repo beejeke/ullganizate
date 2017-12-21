@@ -29,10 +29,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/client" style="font-family: 'Oxygen', sans-serif; color: white; margin-left:100px;">Mis Eventos</a>
+          <a class="nav-link" href="about.html" style="font-family: 'Oxygen', sans-serif; color: white; margin-left:100px;" >About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" style="font-family: 'Oxygen', sans-serif; color: white; margin-left:100px;">Help</a>
+          <a class="nav-link" href="https://github.com/ozzrocker95/proyecto-sytw-1718" style="font-family: 'Oxygen', sans-serif; color: white; margin-left:100px;">Repositorio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/client" style="font-family: 'Oxygen', sans-serif; color: white; margin-left:100px;">Recibidos</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -86,6 +89,8 @@
             <div class="cd-timeline-content ">
               <h2 name="titulos_eventos[]" style="font-family: 'Oxygen', sans-serif; color: black;"><%=evento[i].timeline.titulo%></h2>
               <span name="fechas_creacion_eventos[]"style="font-family: 'Oxygen', sans-serif; color: black;"><%=evento[i].timeline.fi.getDate()+"-"+(evento[i].timeline.fi.getMonth()+1)+"-"+evento[i].timeline.fi.getFullYear()%></span>
+              <br></br>
+              <h6 name="creadorEvento[]" style="font-family: 'Oxygen', sans-serif; color: black;">Por: <%=evento[i].timeline.nombreEmisor%></h6>
               <p name="descripcion_eventos[]" style="font-family: 'Oxygen', sans-serif; color: black;"><%=evento[i].timeline.contenido%></p>
               <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="<%='#EditEvento'+i%>">
                 <i class="fa fa-wrench" aria-hidden="true"> </i>
