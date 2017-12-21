@@ -4,7 +4,7 @@
 }
 body {
   background-image: url(/img/stars.jpg);
-  background-position: center center;	  
+  background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -290,9 +290,9 @@ a {
   color: #fff;
 }
 
-.btn-google {
+.btn-twitter {
   font-family: 'Oxygen', sans-serif;
-  background: #d34836;
+  background: #55ACEE;
   border-radius: 0;
   color: #fff;
   border-width: 1px;
@@ -307,18 +307,18 @@ a {
   margin-left: 2px;
 }
 
-.btn-google:link, .btn-google:visited {
+.btn-twitter:link, .btn-twitter:visited {
   color: #fff;
 }
 
-.btn-google:active, .btn-google:hover {
-  background: #dd4b39;
+.btn-twitter:active, .btn-twitter:hover {
+  background: #263961;
   color: #fff;
 }
 
 
 footer {
-  
+
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -345,7 +345,7 @@ footer {
 
 
 
-/* -------------------------------- 
+/* --------------------------------
 
 Modules - reusable parts of our design
 
@@ -364,9 +364,9 @@ Modules - reusable parts of our design
   clear: both;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
-Main components 
+Main components
 
 -------------------------------- */
 
@@ -464,11 +464,11 @@ Main components
 		border-color: transparent!important;
 		border-right: 7px solid white !important
 	}
-	
+
 	.cd-timeline-img strong {
 		font-size: 15px!important;
 	}
-	
+
 }
 
 
@@ -647,7 +647,7 @@ Main components
     padding: 1.6em;
     width: 70%;
   }
-  
+
   .cd-timeline-content .cd-read-more {
     float: left;
   }
@@ -659,7 +659,7 @@ Main components
     font-size: 16px;
     font-size: 1rem;
   }
-  
+
   .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
     left: auto;
     right: 122%;
