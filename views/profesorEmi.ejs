@@ -25,7 +25,7 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
-    <a class="navbar-brand" href="#" style="font-family: 'Oxygen', sans-serif; color: white;">Ullganization</a>
+    <a class="navbar-brand" href="/" style="font-family: 'Oxygen', sans-serif; color: white;">ULLganization</a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -116,7 +116,7 @@
     </div>
   </div>
 
-  <!--- MODAL AÑADIR NUEVO EVENTO --->
+  <!-- MODAL AÑADIR NUEVO EVENTO -->
     <div class="modal fade" id="CrearEvento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
@@ -165,9 +165,9 @@
       </div>
     </div>
 
-    <!--- MODAL EDITAR EVENTO --->
+    <!-- MODAL EDITAR EVENTO -->
         <% if(evento.length > 0) {  %>
-    <% for(var i=0; i<evento.length ; i++ ) { %>
+    <% for(var i=0; i < evento.length ; i++ ) { %>
 
       <div class="modal fade" id="<%='EditEvento'+i%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
@@ -216,23 +216,7 @@
       <%} }%>
  <!-- Javascript -->
 
- <footer class="mt-4">
-  <div class="container-fluid py-2">
-    <div class="row">
-      <div class="footer-col col-md-4">
-        <img src="img/ull-icon.png" style="width:200px">
-      </div>
-      <div class="footer-col col-md-6">
-        <ul class="list-inline ullganization-text2" style="margin-left:40%;">
-          <li class="list-inline-item"style="margin-left:10%;">Berkan</li>
-          <li class="list-inline-item"style="margin-left:10%;">Omar</li>
-          <li class="list-inline-item"style="margin-left:10%;">Darwin</li>
-          <li class="list-inline-item"style="margin-left:10%;">Carlos</li>
-        </ul>
-      </div>
-    </div>
-    </div>
-</footer>
+
 
  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

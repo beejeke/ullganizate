@@ -152,7 +152,7 @@ a, a:hover, a:focus {
 
 #container-ullganiza {
   text-align: center;
-  transform: translateY(160px);
+  transform: translateY(50px);
   font-family: 'Oxygen', sans-serif;
   font-size: 92pt;
   overflow: hidden;
@@ -166,7 +166,7 @@ a, a:hover, a:focus {
 }
 
 #contenido {
-  transform: translateY(50%);
+  transform: translateY(10%);
 }
 
 #navbar-page {
@@ -319,9 +319,9 @@ a {
 
 footer {
 
-  position: relative;
+  position: absolute;
   width: 100%;
-  bottom: 0;
+  height: -100px;
   background-color: rgb(26, 26, 26);
   border: 1px solid rgba(68, 68, 68, 0.555);
   font-family: 'Oxygen', sans-serif;
