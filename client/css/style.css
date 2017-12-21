@@ -319,13 +319,13 @@ a {
 
 footer {
 
-  position: absolute;
+  position: relative;
   width: 100%;
   bottom: 0;
   background-color: rgb(26, 26, 26);
   border: 1px solid rgba(68, 68, 68, 0.555);
   font-family: 'Oxygen', sans-serif;
-  font-size: 24px;
+  font-size: 15px;
 }
 
 .list-inline {
