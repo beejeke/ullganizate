@@ -1,5 +1,18 @@
+* {
+  font-family: 'Oxygen', sans-serif;
+  color: white;
+}
+body {
+  background-image: url(/img/stars.jpg);
+  background-position: center center;	  
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
 strong {
   font-weight: 500;
+  color: white;
 }
 
 a, a:hover, a:focus {
@@ -133,14 +146,36 @@ a, a:hover, a:focus {
 }
 
 @font-face {
-  font-family: fuente_titulo;
-  src: url(../fonts/rabiohead.ttf);
+  font-family: 'Oxygen', sans-serif;
+  color: white;
+}
+
+#container-ullganiza {
+  text-align: center;
+  transform: translateY(160px);
+  font-family: 'Oxygen', sans-serif;
+  font-size: 92pt;
+  overflow: hidden;
+  -webkit-animation: typing 3s steps(21, end),blink-caret .5s step-end infinite alternate;
+
+}
+
+#ullganizate {
+  transform: translateX(420px);
+  font-size: 18pt;
+}
+
+#contenido {
+  transform: translateY(50%);
 }
 
 #navbar-page {
-  border-width: 1px;
-  border-style: solid;
-  border-color: black;
+  font-family: 'Oxygen', sans-serif;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  height: 100px;
+  margin-left: 50px;
+
 }
 
 #container-title {
@@ -166,19 +201,21 @@ a, a:hover, a:focus {
 }
 
 #ull-title, #ganization-title {
-  font-family: fuente_titulo;
+  font-family: 'Oxygen', sans-serif;
   font-size: 48pt;
+  color: white;
 }
 
 .panel-login {
 	border-color: #ccc;
 	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
-	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+  border-radius: 50%;
 }
 
 a.active{
-	color: #029f5b;
+	color: #cccccc;
 	font-size: 18px;
 }
 
@@ -187,22 +224,22 @@ a {
 }
 
 .login-register-title {
-  background-color: #583131;
+  background-color: #424242;
   border-width: 1px;
   border-style: solid;
   border-color: black;
-  padding: 10px 10px 10px 20px;
+  padding: 10px 5px 10px 20px;
 }
 
 #register-form-link, #login-form-link {
-  font-family: fuente_titulo;
+  font-family: 'Oxygen', sans-serif;
   font-size: 18pt;
-  text-shadow: -1px -1px 1px #583131, 1px 1px 1px #583131, -1px 1px 1px #000, 1px -1px 1px #583131;
+  text-shadow: -1px -1px 1px #000000, 1px 1px 1px #000000, 1px 1px 1px #000, 1px -1px 1px #000000;
 
 }
 
 .btn-facebook {
-  font-family: fuente_titulo;
+  font-family: 'Oxygen', sans-serif;
   background: #3B5998;
   border-radius: 0;
   color: #fff;
@@ -228,7 +265,7 @@ a {
 }
 
 .btn-github {
-  font-family: fuente_titulo;
+  font-family: 'Oxygen', sans-serif;
   background: black;
   border-radius: 0;
   color: #fff;
@@ -254,7 +291,7 @@ a {
 }
 
 .btn-google {
-  font-family: fuente_titulo;
+  font-family: 'Oxygen', sans-serif;
   background: #d34836;
   border-radius: 0;
   color: #fff;
@@ -279,20 +316,15 @@ a {
   color: #fff;
 }
 
-#relleno-footer {
-  background-color: #FC6E5E;
-  border-width: 1px;
-  border-style: solid;
-  border-color: black;
-  height: 50px;
-  width: 100%;
-}
 
 footer {
-  border-top: 2px solid rgb(128,115,107);
-  color: black;
-  background-color: #B0DEDB;
-  font-family: fuente_titulo;
+  
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: rgb(26, 26, 26);
+  border: 1px solid rgba(68, 68, 68, 0.555);
+  font-family: 'Oxygen', sans-serif;
   font-size: 24px;
 }
 
@@ -797,3 +829,5 @@ Main components
     font-size: 32px;
   }
 }
+@-webkit-keyframes typing { from { width: 0; } }
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }

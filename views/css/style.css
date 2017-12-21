@@ -170,6 +170,18 @@ a, a:hover, a:focus {
   font-size: 48pt;
 }
 
+
+footer {
+  
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: rgb(26, 26, 26);
+  border: 1px solid rgba(68, 68, 68, 0.555);
+  font-family: 'Oxygen', sans-serif;
+  font-size: 24px;
+}
+
 .panel-login {
 	border-color: #ccc;
 	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
@@ -305,9 +317,10 @@ footer {
 /* -------------------------------- */
 
 #titulo_timeline {
+  background-color: rgb(85, 24, 24);
   padding: 4px;
   margin-top: 20px;
-  border: 2px solid black;
+  border: 1px solid black;
   text-align: center;
 }
 
@@ -775,7 +788,7 @@ Main components
 }
 
 #global {
-	height: 500px;
+  height: 500px;
 	border: 1px solid black;
 	background: #f1f1f1;
 	overflow-y: scroll;

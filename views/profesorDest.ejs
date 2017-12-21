@@ -20,35 +20,27 @@
 
 <body>
 
-   <div class="container" id="container-title">
-     <div class="page-header">
-       <div class="row">
-         <div class="col-md-12 text">
-         </div>
-       </div>
-     </div>
-   </div>
 
   <nav class="navbar navbar-toggleable-md navbar-light bg-faded" id="navbar-page">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
-    <a class="navbar-brand" href="#">Ullganization</a>
+    <a class="navbar-brand" href="#" style="font-family: 'Oxygen', sans-serif; color: white;">Ullganization</a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/profEnviados">Enviados</a>
+          <a class="nav-link" href="/profEnviados" style="font-family: 'Oxygen', sans-serif; color: white; margin-left:100px;">Enviados</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Help</a>
+          <a class="nav-link" href="#" style="font-family: 'Oxygen', sans-serif; color: white; margin-left:100px;">Help</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link"><%- user %></a>
+          <a class="nav-link" style="font-family: 'Oxygen', sans-serif; color: white; margin-right:100px;"><%- user %></a>
         </li>
         <li class="navbar-item">
-          <a class="nav-link" href="/logout">LogOut</a>
+          <a class="nav-link" href="/logout" style="font-family: 'Oxygen', sans-serif; color: white; margin-right:100px;">Log Out</a>
         </li>
       </ul>
     </div>
@@ -56,8 +48,8 @@
 
   <div class="container" id="">
     <div class="row">
-      <div class="offset-md-2 col-md-8 offset-md-2" id="titulo_timeline">
-        <label for="crear_evento">TIMELINE DE EVENTOS DEL USUARIO</label>
+      <div class="offset-md-1 col-md-10 offset-md-1" id="titulo_timeline" style="background-color:rgb(58, 58, 58);font-family: 'Oxygen', sans-serif; border-radius:10px 10px 0% 0%;">
+        <label for="crear_evento" >TIMELINE DE EVENTOS DEL USUARIO</label>
         <br>
         <a data-toggle="modal" href="#CrearEvento" class="btn btn-success" id="crear-evento-boton" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus" aria-hidden="true"></i> Crear Evento</a>
       </div>
@@ -66,7 +58,7 @@
 
   <div class="container" id="">
     <div class="row">
-      <div class="offset-md-2 col-md-8 offset-md-2" id="global">
+      <div class="offset-md-1 col-md-10 offset-md-1" id="global">
 
         <section id="cd-timeline" class="cd-container" id="mensaje">
 
@@ -83,18 +75,18 @@
             <!-- cd-timeline-img -->
             <div class="cd-timeline-img cd-picture">
               <strong>
-                <span name="fecha_fin_evento_dia[]"><%=evento[i].timeline.ff.getDate()%></span>
+                <span name="fecha_fin_evento_dia[]" style="font-family: 'Oxygen', sans-serif; color: black;"><%=evento[i].timeline.ff.getDate()%></span>
                 </br>
-                <div name="fecha_fin_evento_mes[]" ><%=Fechas.Mes(evento[i].timeline.ff.getMonth())%></div>
+                <div name="fecha_fin_evento_mes[]" style="font-family: 'Oxygen', sans-serif; color: black;"><%=Fechas.Mes(evento[i].timeline.ff.getMonth())%></div>
               </strong>
             </div>
             <!-- cd-timeline-img -->
 
             <!-- cd-timeline-content -->
             <div class="cd-timeline-content ">
-              <h2 name="titulos_eventos[]"><%=evento[i].timeline.titulo%></h2>
-              <span name="fechas_creacion_eventos[]"><%=evento[i].timeline.fi.getDate()+"-"+(evento[i].timeline.fi.getMonth()+1)+"-"+evento[i].timeline.fi.getFullYear()%></span>
-              <p name="descripcion_eventos[]"><%=evento[i].timeline.contenido%></p>
+              <h2 name="titulos_eventos[]" style="font-family: 'Oxygen', sans-serif; color: black;"><%=evento[i].timeline.titulo%></h2>
+              <span name="fechas_creacion_eventos[]" style="font-family: 'Oxygen', sans-serif; color: black;"><%=evento[i].timeline.fi.getDate()+"-"+(evento[i].timeline.fi.getMonth()+1)+"-"+evento[i].timeline.fi.getFullYear()%></span>
+              <p name="descripcion_eventos[]" style="font-family: 'Oxygen', sans-serif; color: black;"><%=evento[i].timeline.contenido%></p>
               <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="<%='#EditEvento'+i%>">
                 <i class="fa fa-wrench" aria-hidden="true"> </i>
               </button>
@@ -212,6 +204,25 @@
       </div>
       <%} }%>
  <!-- Javascript -->
+
+ <footer class="mt-4">
+  <div class="container-fluid py-2">
+    <div class="row">
+      <div class="footer-col col-md-4">
+        <img src="img/ull-icon.png" style="width:200px">
+      </div>
+      <div class="footer-col col-md-6">
+        <ul class="list-inline ullganization-text2" style="margin-left:40%;">
+          <li class="list-inline-item"style="margin-left:10%;">Berkan</li>
+          <li class="list-inline-item"style="margin-left:10%;">Omar</li>
+          <li class="list-inline-item"style="margin-left:10%;">Darwin</li>
+          <li class="list-inline-item"style="margin-left:10%;">Carlos</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+</footer>
+
  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.1/js/tether.js"></script>

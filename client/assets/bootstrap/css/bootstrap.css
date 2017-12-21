@@ -342,7 +342,7 @@ body {
   font-weight: normal;
   line-height: 1.5;
   color: #292b2c;
-  background-color: #fff;
+  background: linear-gradient(to top, #2c3e50, #3498db);
 }
 
 [tabindex="-1"]:focus {
