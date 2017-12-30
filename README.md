@@ -1,12 +1,13 @@
 [![AllContributors](https://img.shields.io/badge/all_contributors-4-blue.svg?style=flat-square)](#contributors)
 
-# Proyecto de Sistemas y Tecnologías WEB
+## Proyecto de Sistemas y Tecnologías Web
 
 Repositorio para alojar el proyecto de la asignatura Sistemas y Tecnologías Web, en la Universidad de La Laguna,
 curso 2017/2018
-# Tecnologías en Uso.
 
-Vamos a utilizar el framework de javascript [vuejs](https://vuejs.org/). ![vuejs](https://i.imgur.com/TvWW7Y1.png)
+## Tecnologías en uso
+
+Vamos a utilizar el framework de Javascript [Vue](https://vuejs.org/). ![Vue](https://i.imgur.com/TvWW7Y1.png)
 
 
   Para ello, usaremos su modulo de npm:
@@ -21,14 +22,20 @@ Vamos a utilizar el framework de javascript [vuejs](https://vuejs.org/). ![vuejs
   ~~~  
     sudo apt-get install npm   
   ~~~
-# Despliegue IAAS.
+## Despliegue IAAS
+
 10.6.128.251:8087
 
-# [Tutorial vuejs](https://ozzrocker95.github.io/ullganizate/)
-# [Editor Online Web](http://jsbin.com/?html,output)
+## Tutorial para la iniciación con Vue
+
+[Tutorial Vue](https://ozzrocker95.github.io/ullganizate/)
+
+## Editor online para realizar pruebas con Vue
+
+[Editor Online Web](http://jsbin.com/?html,output)
 
 
-# Sincronizar un fork
+## Sincronizar un fork
 
 1. Añadir rama remota del repositorio original.
 * git remote add upstream <ssh_repositorio>.
