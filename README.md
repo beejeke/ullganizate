@@ -24,7 +24,7 @@ Vamos a utilizar el framework de Javascript [Vue](https://vuejs.org/). ![Vue](ht
   ~~~
 ## Despliegue IAAS
 
-10.6.128.251:8087
+Enlace a la máquina del [IaaS](10.6.128.251:8087) donde tenemos desplegado el proyecto.
 
 ## Tutorial para la iniciación con Vue
 
